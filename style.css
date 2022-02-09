@@ -1,0 +1,124 @@
+@charset "utf-8";
+
+*{box-sizing: border-box;}
+html, body{font-family: 'Stem'; margin: 0; padding: 0; }
+header, section, article, aside, nav, main, footer{display: block;}
+h1, h2, h3, h4, h5, h6, p{margin: 0;}
+ul, ol{margin: 0; padding: 0; list-style: none;}
+a{text-decoration: none; color: black;}
+.clear{clear: both;}
+
+.flex {
+    display: flex;
+}
+.aic {
+    align-items: center;
+}
+.tac {
+    text-align: center;
+}
+.jcsb {
+    justify-content: space-between;
+}
+.jcc {
+    justify-content: center;
+}
+.jcsa {
+    justify-content: space-around
+}
+.jcse {
+    justify-content: space-evenly;
+}
+.flex {
+    flex: 1 1 auto;
+}
+
+.mb-10 {
+    margin-bottom: 10px;
+}
+.mt-10 {
+    margin-top: 10px;
+}
+.mr-10 {
+    margin-right: 10px;
+}
+.ml-10 {
+    margin-left: 10px;
+}
+.w100 {
+    width: 100%;
+}
+
+
+
+.contain { 
+    width: 100%; 
+    max-width: 500px; 
+    margin: 30px auto;
+    padding: 15px;
+}
+.btn {
+    border: 1px solid;
+    border-radius: 4px;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+}
+.btn-player {
+    background-color: #3498db;
+    border-color: #3498db;
+    color: #fff;
+    margin-right: 5px;
+}
+.btn-player:hover {
+    background-color: #2a8aca;
+}
+.btn-banker {
+    background-color: #e74c3c;
+    border-color: #e74c3c;
+    color: #fff;
+    margin-left: 5px;
+}
+.btn-banker:hover {
+    background-color: #d63422;
+}
+.screen {
+    width: 100%; 
+    border: 1px solid #c7c7c7; 
+    padding: 10px 20px; 
+    border-radius: 4px; 
+    margin-bottom: 10px;
+}
+.cul-body {
+    width: 100%;
+}
+.cul-body-left {
+    width: 130px;
+}
+
+
+
+.night-mode {
+    width: 43px;
+    height: 43px;
+    border-radius: 10px;
+    background-color: #333;
+    text-align: center;
+    cursor: pointer;
+    font-size: 30px;
+    color: #fff;
+    transition: all 0.5s ease-in-out;
+    border: 1px solid #333;
+}
+.night-mode:hover {
+    color: #333;
+    background-color: rgb(231, 231, 231);
+}
+.night-mode i {
+    margin: 0 auto;
+    font-size: 23px;
+}
+@media (prefers-color-scheme: dark) {
+    /* Your CSS */
+}
