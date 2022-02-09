@@ -30,28 +30,28 @@ BTN_Player.addEventListener("click", function(){
 
         if ( playerLoseStreak === false ){
 
-            playerScore++;
+            // playerScore++;
             bankerScore++;
-            // console.log("플레이어 A-2")
+            console.log("플레이어 A-2")
 
         } else {        
 
             playerLoseStreak = true;
             bankerScore++;
-            // console.log("플레이어 A-3")
+            console.log("플레이어 A-3")
             
         }
 
     } else if ( list.slice(-2)[0] === 'A' && list.slice(-2)[1] === 'A' ){  
 
         playerScore -= 2;
-        // console.log("플레이어 B")
+        console.log("플레이어 B")
 
     } else if ( playerMultiLose === true && playerLoseStreak === true ){  // 플레이어 연패
 
         playerLoseStreak = false;
         playerMultiLose = false;
-        // console.log("플레이어 C")
+        console.log("플레이어 C")
 
     } 
     else if (bankerLoseStreak === true && list.slice(-2)[0] === 'B' && list.slice(-2)[1] === 'A'){ // 뱅커 연패
@@ -60,14 +60,14 @@ BTN_Player.addEventListener("click", function(){
         playerScore -= 2;
         bankerLoseStreak = false;
         bankerMultiLose = true;
-        // console.log("플레이어 D")
+        console.log("플레이어 D")
 
     } else {                          // 일반 클릭
 
         playerScore -= 2;
         bankerScore++;
         playerLoseStreak = false;
-        // console.log("플레이어 E")
+        console.log("플레이어 E")
     }
 
     if (playerScore <= 0) {
@@ -93,12 +93,12 @@ BTN_Player.addEventListener("click", function(){
         playerPrice = 0;
     }
 
-    // console.log("플레이어 연패 " + playerLoseStreak)
-    // console.log("뱅커 연패 "+bankerLoseStreak)
-    // console.log("플레이어 4연패 " + playerMultiLose)
-    // console.log("뱅커 4연패 "+bankerMultiLose)
-    // console.log("뱅커 "+bankerPrice)
-    // console.log("플레이어 "+playerPrice)
+    console.log("플레이어 연패 " + playerLoseStreak)
+    console.log("뱅커 연패 "+bankerLoseStreak)
+    console.log("플레이어 4연패 " + playerMultiLose)
+    console.log("뱅커 4연패 "+bankerMultiLose)
+    console.log("뱅커 "+bankerPrice)
+    console.log("플레이어 "+playerPrice)
     
     const culBoth = playerPrice - bankerPrice;
 
@@ -136,27 +136,27 @@ BTN_Banker.addEventListener("click", function(){
         if ( bankerLoseStreak === false ){
 
             playerScore++;
-            bankerScore++;
-            // console.log("뱅커 A-2")
+            // bankerScore++;
+            console.log("뱅커 A-2")
 
         } else {
 
             bankerLoseStreak = true;
             playerScore++;
-            // console.log("뱅커 A-3")
+            console.log("뱅커 A-3")
 
         }
 
     } else if ( list.slice(-2)[0] === 'B' && list.slice(-2)[1] === 'B' ){ 
 
         bankerScore -= 2;
-        // console.log("뱅커 B")
+        console.log("뱅커 B")
 
     } else if ( bankerMultiLose === true && bankerLoseStreak === true ){ // 4연패
 
         bankerLoseStreak = false;
         bankerMultiLose = false;
-        // console.log("뱅커 C")
+        console.log("뱅커 C")
 
     } else if ( bankerLoseStreak === true && list.slice(-2)[0] === 'A' && list.slice(-2)[1] === 'B'){
 
@@ -164,7 +164,7 @@ BTN_Banker.addEventListener("click", function(){
         bankerScore -= 2;
         playerLoseStreak = false;
         playerMultiLose = true;
-        // console.log("뱅커 D")
+        console.log("뱅커 D")
 
     } else {
 
@@ -197,12 +197,12 @@ BTN_Banker.addEventListener("click", function(){
         bankerPrice = 0;
     }
 
-    // console.log("플레이어 연패 " + playerLoseStreak)
-    // console.log("뱅커 연패 "+bankerLoseStreak)
-    // console.log("플레이어 4연패 " + playerMultiLose)
-    // console.log("뱅커 4연패 "+bankerMultiLose)
-    // console.log("뱅커 "+bankerPrice)
-    // console.log("플레이어 "+playerPrice)
+    console.log("플레이어 연패 " + playerLoseStreak)
+    console.log("뱅커 연패 "+bankerLoseStreak)
+    console.log("플레이어 4연패 " + playerMultiLose)
+    console.log("뱅커 4연패 "+bankerMultiLose)
+    console.log("뱅커 "+bankerPrice)
+    console.log("플레이어 "+playerPrice)
 
     const culBoth = playerPrice - bankerPrice;
 
