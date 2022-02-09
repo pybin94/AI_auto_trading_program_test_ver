@@ -1,1 +1,1 @@
-# AI_auto_trading_program_test_ver
+# auto_trading_program_test_ver
