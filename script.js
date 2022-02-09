@@ -112,8 +112,8 @@ BTN_Player.addEventListener("click", function(){
 
 
 
-    // document.querySelector("#playerScore").innerHTML = playerScore;
-    // document.querySelector("#bankerScore").innerHTML = bankerScore;
+    document.querySelector("#playerScore").innerHTML = playerScore;
+    document.querySelector("#bankerScore").innerHTML = bankerScore;
 
 })
 
@@ -140,7 +140,7 @@ BTN_Banker.addEventListener("click", function(){
         bankerMultiLose = false;
         console.log("뱅커 C")
 
-    } else if ( bankerLoseStreak === true && list.slice(-2)[0] === 'A' && list.slice(-2)[1] === 'B'){
+    } else if ( playerLoseStreak === true && list.slice(-2)[0] === 'A' && list.slice(-2)[1] === 'B'){
 
         playerScore++;
         bankerScore -= 2;
@@ -205,7 +205,7 @@ BTN_Banker.addEventListener("click", function(){
         bettingScreen.innerHTML = "배팅금지";
     }
 
-    // document.querySelector("#playerScore").innerHTML = playerScore;
-    // document.querySelector("#bankerScore").innerHTML = bankerScore;
+    document.querySelector("#playerScore").innerHTML = playerScore;
+    document.querySelector("#bankerScore").innerHTML = bankerScore;
 
 })
