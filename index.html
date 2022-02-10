@@ -7,16 +7,13 @@
     <title>AI자동 매매 프로그램</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-<body class="contain">
+<body class="container">
     <section class="flex cul-body">
-        <!-- <div class="btn cul-body-left mb-10 mr-10">배팅</div> -->
-        <div id="bettingScreen" class="screen betting-screen">0</div>
+        <div id="bettingScreen" class="screen betting-screen">게임 결과를 입력해주세요.</div>
     </section>
     <section class="flex aic cul-body mb-10">
-        <!-- <div class="btn cul-body-left mr-10">결과</div> -->
-        <!-- <div class="cul-body flex"> -->
-            <div id="player" class="btn btn-player flex-auto">플레이어</div>
-            <div id="banker" class="btn btn-banker flex-auto">뱅커</div>
+            <div id="player" class="btn btn-player cur flex-auto">플레이어(홀)</div>
+            <div id="banker" class="btn btn-banker cur flex-auto">뱅커(짝)</div>
         <!-- </div> -->
     </section>
     <section class="flex cul-body">
@@ -32,13 +29,43 @@
             <div id="" class="screen">-</div>
             <div id="" class="screen">-</div>
             <div id="" class="screen">-</div>
-            <div id="" class="screen">-</div>
+            <div id="" class="screen"><span id="win">0</span>승 <span id="lose">0</span>패 <span id="winRate">0</span>%</div>
         </div>
     </section>
-    <section class="flex aic">
-
+    <section class="flex aic jcsb">
+        <div id="resetBtn" class="tac btn cur mr-10">게임리셋</div>
+        <div id="" class="tac btn cur mr-10">뒤로가기</div>
+        <div id="manual" class="tac btn cur mr-10">사용방법</div>
+        <div id="setting" class="setting flex aic mr-10"><i class="fas fa-cog"></i></i></div>
+        <div id="nightMode" class="night-mode flex aic "><i class="far fa-moon"></i></div>
     </section>
-    <!-- <div id="nightMode" class="night-mode flex aic"><i class="far fa-moon"></i></div> -->
+
+    <div id="gameMenu" class="game-menu">
+        <div id="gameMenuCloseBtn" class="close"></div>
+        <h4>사용방법</h4>
+        <ol>
+            <li><span class="notice">배팅금액</span>을 입력합니다.<br>보유금액 50~100 = 10,000원 시작 추천<br>보유금액 100~200 = 20,000원 시작 추천<br>보유금액 200~300 = 30,000원 시작 추천</li>
+            <li><span class="notice">보유금액</span>을 입력합니다.</li>
+            <li><span class="notice">시작</span> 버튼을 클릭합니다.</li>
+            <li>첫 게임 결과입력 후 배팅금액 <span class="notice">조건</span> 대로 배팅을 시작합니다.</li>
+            <li>게임 진행 후 플레이어 또는 뱅커에 <span class="notice">결과를 입력</span> 합니다</li>
+            <li>결과를 잘못 입력했을 경우 <span class="notice">뒤로가기</span>를 클립합니다.</li>
+            <li>새로 시작을 할때는 <span class="notice">초기화</span>를 클릭 후 재 시작합니다.</li>
+            <br>
+        </ol>
+        <h4>사용자 tip</h4>
+        <ol>
+            <li>하루 목표금액을 새워 진행하시는 것을 추천합니다.</li>
+            <li>게임중간 보다는 시작할 때 첫판부터 진행하시는 것을 적극 추천합니다.</li>
+            <li>한슈 한슈 나눠서 하시길 추천합니다. 한슈가 끝나갈 무렵 손익을 보시고 끝나기 전 익절 하시길 적극 추천합니다.</li>
+            <li>슈가 끝나갈 무렵 높은 금액 배팅 예상 시 배팅에 참여 하지 마시고 다음 판에 새로 시작하시길 적극 추천합니다.</li>
+            <li>짧은 시간 이용하여 목표금액 달성시까지만 사용하시길 적극 추천합니다.</li>
+            <li>장시간 플레이시 손실에 우려가 있습니다.</li>
+            <li><span class="notice">손실 시 분노배팅 금지!! 다시해도 승률이 높아 복구가 빠릅니다.</span></li>
+        </ol>
+
+    </div>
+
     <!-- <p id="playerScore">0</p>
     <p id="bankerScore">0</p> -->
     <script src="./script.js"></script>
