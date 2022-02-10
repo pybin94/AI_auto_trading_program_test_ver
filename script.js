@@ -34,15 +34,34 @@ BTN_Player.addEventListener("click", function(){
 
     } else if ( list.slice(-2)[0] === 'A' && list.slice(-2)[1] === 'A' ){  
 
-        playerScore -= 2;
-        console.log("플레이어 B")
+        if ( playerMultiLose === true ){
 
-    } else if ( playerMultiLose === true && playerLoseStreak === true ){  // 플레이어 연패
+            playerMultiLose === false;
+            onsole.log("플레이어 B-1")
 
-        bankerScore++;
-        playerLoseStreak = false;
-        playerMultiLose = false;
-        console.log("플레이어 C")
+        } else {
+
+            playerScore -= 2;
+            console.log("플레이어 B-2")
+
+        }
+
+    } else if ( playerMultiLose === true){  // 플레이어 연패
+
+        if ( list.slice(-1)[0] === 'A' ){
+
+            bankerScore++;
+            playerLoseStreak = false;
+            playerMultiLose = false;
+            console.log("플레이어 C-1")
+
+        } else {
+
+            bankerScore++;
+            console.log("플레이어 C-2")
+
+        }
+
 
     } 
     else if (bankerLoseStreak === true && list.slice(-2)[0] === 'B' && list.slice(-2)[1] === 'A'){ // 뱅커 연패
@@ -53,12 +72,18 @@ BTN_Player.addEventListener("click", function(){
         bankerMultiLose = true;
         console.log("플레이어 D")
 
+    } else if (bankerMultiLose === true){      //ppbppbp
+
+        playerScore -= 2;
+        console.log("플레이어 E")
+
     } else {                          // 일반 클릭
 
         playerScore -= 2;
         bankerScore++;
         playerLoseStreak = false;
-        console.log("플레이어 E")
+        console.log("플레이어 F")
+
     }
 
     if (playerScore <= 0) {
@@ -80,6 +105,10 @@ BTN_Player.addEventListener("click", function(){
         bankerPrice = 0;
     }
 
+    if( bankerMultiLose === true){      // 4연패 후 첫 승은 계산 안함
+        bankerPrice = 0;
+    }
+    
     if( playerMultiLose === true){      // 4연패 후 첫 승은 계산 안함
         playerPrice = 0;
     }
@@ -112,8 +141,8 @@ BTN_Player.addEventListener("click", function(){
 
 
 
-    document.querySelector("#playerScore").innerHTML = playerScore;
-    document.querySelector("#bankerScore").innerHTML = bankerScore;
+    // document.querySelector("#playerScore").innerHTML = playerScore;
+    // document.querySelector("#bankerScore").innerHTML = bankerScore;
 
 })
 
@@ -130,15 +159,35 @@ BTN_Banker.addEventListener("click", function(){
 
     } else if ( list.slice(-2)[0] === 'B' && list.slice(-2)[1] === 'B' ){ 
 
-        bankerScore -= 2;
-        console.log("뱅커 B")
+        if ( bankerMultiLose === true ){
 
-    } else if ( bankerMultiLose === true && bankerLoseStreak === true ){ // 4연패
+            bankerMultiLose === false;
+            console.log("뱅커 B-1")
 
-        playerScore++;
-        bankerLoseStreak = false;
-        bankerMultiLose = false;
-        console.log("뱅커 C")
+        } else {
+
+            bankerScore -= 2;
+            console.log("뱅커 B-2")
+
+        }
+
+
+    } else if ( bankerMultiLose === true){ // 4연패
+
+        if( list.slice(-1)[0] === 'B' ){
+
+            playerScore++;
+            bankerLoseStreak = false;
+            bankerMultiLose = false;
+            console.log("뱅커 C-1")
+
+        } else {
+
+            playerScore++;
+            console.log("뱅커 C-2")
+
+        }
+
 
     } else if ( playerLoseStreak === true && list.slice(-2)[0] === 'A' && list.slice(-2)[1] === 'B'){
 
@@ -148,12 +197,17 @@ BTN_Banker.addEventListener("click", function(){
         playerMultiLose = true;
         console.log("뱅커 D")
 
+    } else if (playerMultiLose === true){      //ppbppbp
+
+        bankerScore -= 2;
+        console.log("뱅커 E")
+
     } else {
 
         bankerScore -= 2;
         playerScore++;
         bankerLoseStreak = false;
-        // console.log("뱅커 E")
+        console.log("뱅커 F")
 
     }
 
@@ -166,6 +220,7 @@ BTN_Banker.addEventListener("click", function(){
 
     if ( list.slice(-2)[0] === 'A' && list.slice(-2)[1] === 'A' && playerLoseStreak === true){ 
         playerPrice = 0;
+
     } 
 
     list.push("B")
@@ -175,8 +230,13 @@ BTN_Banker.addEventListener("click", function(){
         playerPrice = 0;
     }
 
+    if( playerMultiLose === true){      // 4연패 후 첫 승은 계산 안함
+        playerPrice = 0;
+
+    }
     if( bankerMultiLose === true){      // 4연패 후 첫 승은 계산 안함
         bankerPrice = 0;
+
     }
 
     console.log("플레이어 연패 " + playerLoseStreak)
@@ -205,7 +265,7 @@ BTN_Banker.addEventListener("click", function(){
         bettingScreen.innerHTML = "배팅금지";
     }
 
-    document.querySelector("#playerScore").innerHTML = playerScore;
-    document.querySelector("#bankerScore").innerHTML = bankerScore;
+    // document.querySelector("#playerScore").innerHTML = playerScore;
+    // document.querySelector("#bankerScore").innerHTML = bankerScore;
 
 })
