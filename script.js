@@ -25,7 +25,7 @@ let startAmountValue;
 
 let sumGameResult = 0;
 
-let betAmountValue = sumGameResult;         // 배팅 금액
+// let betAmountValue = sumGameResult;         // 배팅 금액
 let nowPriceValue = 0;                      // 현재 금액
 let profitValue = 0;                        // 합산 손익
 
@@ -70,7 +70,7 @@ let winCountArr = [0];
 let loseCountArr = [0];
 
 
-betAmount.innerHTML = 0;
+// betAmount.innerHTML = 0;
 
 
 function nowProfit(){       // 합산 손익
@@ -97,11 +97,10 @@ function gameReset(){       // 게임 리셋
     winCount = 0;
     loseCount = 0;
     winRateCheck = 0;
-
+    // betAmount.innerHTML = 0;
     winRate.innerHTML = 0;
     win.innerHTML = 0;
     lose.innerHTML = 0;
-    betAmount.innerHTML = 0;
 
     list = [];
     gameResultArr = [];
@@ -142,7 +141,7 @@ function revert(){      // 게임 뒤로 가기
     console.log( winCountArr.slice(-1)[0], loseCountArr.slice(-1)[0])
 
     nowPrice.innerHTML = nowPriceValueArr.slice(-1)[0].toLocaleString('ko-KR');
-    betAmount.innerHTML = sumGameResultArr.slice(-1)[0].toLocaleString('ko-KR');
+    // betAmount.innerHTML = sumGameResultArr.slice(-1)[0].toLocaleString('ko-KR');
     bettingScreen.innerHTML = gameResultAllArr.slice(-1)[0].toLocaleString('ko-KR');
 
     if( gameResultAllArr.slice(-1)[0].includes("플레이어") === true ) {
@@ -249,7 +248,7 @@ BTN_Player.addEventListener("click", function(){
     sumGameResultArr.push(sumGameResult)
     sumGameResult = 0;
 
-    betAmount.innerHTML = sumGameResultArr.slice(-1)[0].toLocaleString('ko-KR');
+    // betAmount.innerHTML = sumGameResultArr.slice(-1)[0].toLocaleString('ko-KR');
 
 
     // 계산
@@ -383,7 +382,7 @@ BTN_Banker.addEventListener("click", function(){
     sumGameResultArr.push(sumGameResult)
     sumGameResult = 0;
 
-    betAmount.innerHTML = sumGameResultArr.slice(-1)[0].toLocaleString('ko-KR');
+    // betAmount.innerHTML = sumGameResultArr.slice(-1)[0].toLocaleString('ko-KR');
 
 
 
@@ -581,13 +580,14 @@ function setting(){
     const setOK = document.querySelector("#setOK");
     const setCancle = document.querySelector("#setCancle");
     const priceInput = document.querySelector("#priceInput");
-    const setMarginSelect = document.querySelector("#martinSet");
-    let setMargin = document.querySelectorAll("#martinSet option");
+    const setMargin = document.querySelector("#martinSet");
+    
+
     let setMarginValue = 1;
 
-    setMarginSelect.addEventListener("change", function(){
+    setMargin.addEventListener("change", function(){
             
-            setMarginValue = setMarginSelect.value
+            setMarginValue = setMargin.value
             console.log(setMarginValue)
 
     })
@@ -601,6 +601,8 @@ function setting(){
 
     setOK.addEventListener("click", function(){
 
+        let optionTxt = document.querySelector("#martinSet option:checked").text    
+
         if( priceInput.value == '' || priceInput.value < 10000){
 
             priceInput.style.borderColor = "#FF0000"
@@ -612,8 +614,7 @@ function setting(){
             for (let j = 0; j < unsetMargin.length; j++){
                 margin.push(unsetMargin[j] * setMarginValue);
             }
-            
-            console.log(margin)
+            betAmount.innerHTML = optionTxt;
 
             startAmountValue = Number(priceInput.value);
             gameSet.classList.remove("active");
