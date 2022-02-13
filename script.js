@@ -1,12 +1,6 @@
-
-
-
-
 const unsetMargin = [10000,15000,30000,45000,75000,120000,195000,315000,410000,725000];
 
 // 입력값 설정
-
-
 
 const bettingScreen = document.querySelector("#bettingScreen");
 const BTN_Player = document.querySelector("#player");
@@ -20,6 +14,7 @@ const nowPrice = document.querySelector("#nowPrice");
 const profit = document.querySelector("#profit");
 
 
+let premium = 0;
 let limit = 10;
 let startAmountValue;
 
@@ -41,9 +36,9 @@ let bankerMultiLose = false;
 let playerprice = 0;
 let bankerprice = 0;  
 
-let list = [];
-let gameResultArr = [];
-let gameResultAllArr = [];
+let list = [];                      // 버튼
+let gameResultArr = [];             // 게임 결과 값
+let gameResultAllArr = [];          
 let sumGameResultArr = []
 let nowPriceValueArr = [startAmountValue];
 let profitValueArr = [];
@@ -78,8 +73,44 @@ function nowProfit(){       // 합산 손익
     let nowProfit = nowPriceValueArr.slice(-1)[0] - startAmountValue;
     profit.innerHTML = nowProfit.toLocaleString('ko-KR');
 
+
 }
 nowProfit()
+
+function nowPricePlayerWin(){       // 현재금액
+    // 수수료 0.5% 선택적 적용
+    nowPriceValueArr.push(nowPriceValueArr.slice(-1)[0] + (Math.abs(gameResultArr.slice(-1)[0]) - (Math.abs(gameResultArr.slice(-1)[0]) * premium / 100 ) )  );
+    nowPrice.innerHTML = nowPriceValueArr.slice(-1)[0].toLocaleString('ko-KR');
+
+    console.log(Math.abs(gameResultArr.slice(-1)[0]) - (Math.abs(gameResultArr.slice(-1)[0]) * premium / 100 ) )
+
+    if (nowPriceValueArr.slice(-1)[0] < 0){
+        alert("청산됐습니다.")
+        gameReset()
+    }
+}
+function nowPriceBankerWin(){       // 현재금액
+    // 수수료 0.5%
+    nowPriceValueArr.push(nowPriceValueArr.slice(-1)[0] + (Math.abs(gameResultArr.slice(-1)[0]) - (Math.abs(gameResultArr.slice(-1)[0]) * 0.5 / 100 ) )  );
+    nowPrice.innerHTML = nowPriceValueArr.slice(-1)[0].toLocaleString('ko-KR');
+
+    if (nowPriceValueArr.slice(-1)[0] < 0){
+        alert("청산됐습니다.")
+        gameReset()
+    }
+}
+function nowPriceLose(){       // 현재금액
+
+    nowPriceValueArr.push(nowPriceValueArr.slice(-1)[0] - Math.abs(gameResultArr.slice(-1)[0]));
+    nowPrice.innerHTML = nowPriceValueArr.slice(-1)[0].toLocaleString('ko-KR');
+
+    console.log(gameResultArr)
+
+    if (nowPriceValueArr.slice(-1)[0] < 0){
+        alert("청산됐습니다.")
+        gameReset()
+    }
+}
 
 
 function gameReset(){       // 게임 리셋
@@ -169,7 +200,7 @@ function revert(){      // 게임 뒤로 가기
 }
 
 
-function betResult(){
+function betResult(){       // 게임 스크린
 
     if(culBoth > 0) {
 
@@ -220,8 +251,7 @@ BTN_Player.addEventListener("click", function(){
         winRate.innerHTML = Math.floor((winCountArr.slice(-1)[0]/(winCountArr.slice(-1)[0]+loseCountArr.slice(-1)[0]))*100);
 
         // 현재금액
-        nowPriceValueArr.push(nowPriceValueArr.slice(-1)[0] + Math.abs(gameResultArr.slice(-1)[0]));
-        nowPrice.innerHTML = nowPriceValueArr.slice(-1)[0].toLocaleString('ko-KR');
+        nowPricePlayerWin()
 
     } else if (gameResultArr.slice(-1)[0] < 0){
 
@@ -231,10 +261,7 @@ BTN_Player.addEventListener("click", function(){
         lose.innerHTML = loseCountArr.slice(-1)[0];
         winRate.innerHTML = Math.floor((winCountArr.slice(-1)[0]/(winCountArr.slice(-1)[0]+loseCountArr.slice(-1)[0]))*100);
 
-        // 현재금액
-        nowPriceValueArr.push(nowPriceValueArr.slice(-1)[0] - Math.abs(gameResultArr.slice(-1)[0]));
-        nowPrice.innerHTML = nowPriceValueArr.slice(-1)[0].toLocaleString('ko-KR');
-
+        nowPriceLose()
     } 
 
     // 합산손익
@@ -359,7 +386,7 @@ BTN_Player.addEventListener("click", function(){
 
     if( bankerScore >= limit ){
 
-        alert( "마틴에 도달했습니다. 게임을 다시 시작합니다." );
+        alert( "자동 리셋에 도달했습니다. 게임을 다시 시작합니다." );
         return gameReset();
 
     }
@@ -397,8 +424,7 @@ BTN_Banker.addEventListener("click", function(){
         winRate.innerHTML = Math.floor((winCountArr.slice(-1)[0]/(winCountArr.slice(-1)[0]+loseCountArr.slice(-1)[0]))*100);
 
         // 현재금액
-        nowPriceValueArr.push(nowPriceValueArr.slice(-1)[0] + Math.abs(gameResultArr.slice(-1)[0]))
-        nowPrice.innerHTML = nowPriceValueArr.slice(-1)[0].toLocaleString('ko-KR');
+        nowPriceBankerWin()
 
     } else if (gameResultArr.slice(-1)[0] > 0) {   // 패
 
@@ -409,9 +435,7 @@ BTN_Banker.addEventListener("click", function(){
         winRate.innerHTML = Math.floor((winCountArr.slice(-1)[0]/(winCountArr.slice(-1)[0]+loseCountArr.slice(-1)[0]))*100);
 
         // 현재금액
-        nowPriceValueArr.push(nowPriceValueArr.slice(-1)[0] - Math.abs(gameResultArr.slice(-1)[0]))
-        nowPrice.innerHTML = nowPriceValueArr.slice(-1)[0].toLocaleString('ko-KR');
-
+        nowPriceLose()
     }
     // console.log(nowPriceValue)
     // console.log(nowPriceValueArr)
@@ -513,6 +537,7 @@ BTN_Banker.addEventListener("click", function(){
         playerPrice = 0;
 
     }
+
     if( bankerMultiLose === true){      // 4연패 후 첫 승은 계산 안함
         bankerPrice = 0;
 
@@ -532,7 +557,7 @@ BTN_Banker.addEventListener("click", function(){
 
     if ( playerScore >= limit ) {
 
-        alert( "마틴에 도달되었습니다. 게임을 다시 시작합니다." );
+        alert( "리셋 단계에 도달되었습니다. 게임을 다시 시작합니다." );
         return gameReset();
 
     }
@@ -581,14 +606,28 @@ function setting(){
     const setCancle = document.querySelector("#setCancle");
     const priceInput = document.querySelector("#priceInput");
     const setMargin = document.querySelector("#martinSet");
+    const levelLimit = document.querySelector("#levelLimit");
+    const gameType = document.querySelector("#gameType");
     
 
     let setMarginValue = 1;
 
-    setMargin.addEventListener("change", function(){
+    setMargin.addEventListener("change", function(){    // 배팅금액
             
             setMarginValue = setMargin.value
-            console.log(setMarginValue)
+
+    })
+
+    gameType.addEventListener("change", function(){    // 배팅금액
+            
+        premium = gameType.value
+
+    })
+
+    levelLimit.addEventListener("change", function(){   // 자동리셋
+            
+            limit = levelLimit.value
+            // console.log(limit)
 
     })
 

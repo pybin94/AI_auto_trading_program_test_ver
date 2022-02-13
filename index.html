@@ -33,9 +33,9 @@
         </div>
     </section>
     <section class="flex aic jcsb">
-        <div id="resetBtn" class="tac fz12 btn cur mr-10">게임리셋</div>
-        <div id="revert" class="tac fz12 btn cur mr-10">뒤로가기</div>
-        <div id="manual" class="tac fz12 btn cur mr-10">사용방법</div>
+        <div id="resetBtn" class="tac fz14 btn cur mr-10">게임리셋</div>
+        <div id="revert" class="tac fz14 btn cur mr-10">뒤로가기</div>
+        <div id="manual" class="tac fz14 btn cur mr-10">사용방법</div>
         <div id="settingBtn" class="setting-btn flex aic mr-10"><i class="fas fa-cog"></i></i></div>
         <div id="nightMode" class="night-mode flex aic "><i class="far fa-moon"></i></div>
     </section>
@@ -67,10 +67,10 @@
 
     <div id="cover" class="cover active">
         <div id="gameSet" class="game-set active poa">
-            <p class="mb-10">시작금액을 입력하세요</p>
-            <input id="priceInput" type="number" class="btn mb-10" placeholder="10,000원 이상 입력" autocomplete="off">
-            <p class="mb-10">배팅금액을 설정하세요</p>
-            <select name="" id="martinSet" class="btn mb-10">
+            <p class="mb-10 tac">시작금액을 입력하세요</p>
+            <input id="priceInput" type="number" class="btn fz16 mb-10" placeholder="10,000원 이상 입력" autocomplete="off">
+            <p class="mb-10 tac">배팅금액을 설정하세요</p>
+            <select name="" id="martinSet" class="btn fz16 mb-10">
                 <option value="1">10,000</option>
                 <option value="2">20,000</option>
                 <option value="3">30,000</option>
@@ -82,12 +82,24 @@
                 <option value="40">400,000</option>
                 <option value="50">500,000</option>
             </select>
-            <p class="mb-10">게임 종류를 설정하세요</p>
-            <select name="" id="" class="btn mb-20">
-                <option value="1">바카라</option>
-                <option value="2">파워볼</option>
+            <p class="mb-10 tac">게임 종류를 설정하세요</p>
+            <select name="" id="gameType" class="btn fz16 mb-20">
+                <option value="0">바카라</option>
+                <option value="0.5">파워볼</option>
             </select>
+            <p class="mb-10 tac">자동 리셋을 설정하세요</p>
             <div class="flex">
+                <select name="" id="levelLimit" class="btn fz16">
+                    <option value="5">5단</option>
+                    <option value="6">6단</option>
+                    <option value="7">7단</option>
+                    <option value="8">8단</option>
+                    <option value="9">9단</option>
+                    <option value="10" selected>10단</option>
+                </select>
+            </div>
+            <p class="tac mb-10">6단 설정후 6단 금액 손실시 리셋됩니다</p>
+            <div class="flex fz16">
                 <div id="setOK" class="set-btn btn cur active">완료</div>
                 <div id="setCancle" class="set-btn btn ml-5 cur">취소</div>
             </div>
