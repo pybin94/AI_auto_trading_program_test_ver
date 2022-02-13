@@ -1,9 +1,11 @@
-const margin = [10000,15000,30000,45000,75000,120000,195000,315000,410000,725000];
 
-// for(let i = 0; i < )
 
-// console.log(margin*2)
-// 입력 값 설정
+
+
+const unsetMargin = [10000,15000,30000,45000,75000,120000,195000,315000,410000,725000];
+
+// 입력값 설정
+
 
 
 const bettingScreen = document.querySelector("#bettingScreen");
@@ -45,7 +47,7 @@ let gameResultAllArr = [];
 let sumGameResultArr = []
 let nowPriceValueArr = [startAmountValue];
 let profitValueArr = [];
-
+let margin = [];
 
 
 let playerScoreList = [];
@@ -579,6 +581,18 @@ function setting(){
     const setOK = document.querySelector("#setOK");
     const setCancle = document.querySelector("#setCancle");
     const priceInput = document.querySelector("#priceInput");
+    const setMarginSelect = document.querySelector("#martinSet");
+    let setMargin = document.querySelectorAll("#martinSet option");
+    let setMarginValue = 1;
+
+    setMarginSelect.addEventListener("change", function(){
+            
+            setMarginValue = setMarginSelect.value
+            console.log(setMarginValue)
+
+    })
+
+
 
     document.querySelector("#settingBtn").addEventListener("click", function(){
         gameSet.classList.add("active");
@@ -592,6 +606,14 @@ function setting(){
             priceInput.style.borderColor = "#FF0000"
 
         } else {
+
+            margin = []
+
+            for (let j = 0; j < unsetMargin.length; j++){
+                margin.push(unsetMargin[j] * setMarginValue);
+            }
+            
+            console.log(margin)
 
             startAmountValue = Number(priceInput.value);
             gameSet.classList.remove("active");
