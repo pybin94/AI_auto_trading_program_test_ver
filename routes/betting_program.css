@@ -95,6 +95,9 @@ a{
     cursor: pointer;
 }
 
+.none {
+    display: none;
+}
 
 .fz12 {
     font-size: 12px;
