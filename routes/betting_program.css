@@ -307,3 +307,19 @@ input[type="number"]::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
+.resultView {
+    padding: 10px 0;
+}
+.resultView > div {
+    margin-right: 5px;
+    width: 15px;
+    height: 15px;
+    border-radius: 10px;
+}
+.Aclick {
+    background-color: #3498db;
+}
+.Bclick {
+    background-color: #e74c3c;
+}
+

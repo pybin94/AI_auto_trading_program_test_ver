@@ -14,6 +14,7 @@ const nowPrice = document.querySelector("#nowPrice");
 const profit = document.querySelector("#profit");
 const revertBtn = document.querySelector("#revert");
 const priceInput = document.querySelector("#priceInput");
+const resultView = document.querySelector("#resultView");
 
 let premium = 0;
 let limit = 10;
@@ -35,7 +36,7 @@ let bankerMultiLose = false;
 let playerprice = 0;
 let bankerprice = 0;  
 
-let list = [];                      // 버튼
+let list = [];                      // 누른 버튼 값
 let margin = [];
 
 let gameResultArr = [];             // 게임 결과 값
@@ -146,6 +147,7 @@ function gameReset(){       // 게임 리셋
     bettingScreen.style.borderColor = "#c7c7c7";
     bettingScreen.style.boxShadow = "0 0 0 1px #c7c7c7 inset";
     bettingScreen.style.color = "inherit";
+    resultView.innerHTML = "";
 
     playerLoseStreakArr = [];
     bankerLoseStreakArr = [];
@@ -191,6 +193,8 @@ function gameReset(){       // 게임 리셋
 function revert(){      // 게임 뒤로 가기
     
     list.splice(-1,1);
+    viewClick()
+
     gameResultArr.splice(-1,1);
     sumGameResultArr.splice(-1,1);
     nowPriceValueArr.splice(-1,1);
@@ -469,6 +473,8 @@ BTN_Player.addEventListener("click", function(){
 
 
     list.push("A");
+    viewClick()
+
 
     // 연패 기록
     LoseRecode()
@@ -509,9 +515,21 @@ BTN_Player.addEventListener("click", function(){
 
 
 
-
-
 })
+
+// 하단 기록 출력
+function viewClick(){
+
+    const viewLimit = 6;
+
+    resultView.innerHTML = "";
+    list = list.length > viewLimit ? list.slice(list.length - viewLimit) : list;
+    list.map((item, index) => {
+        resultView.innerHTML += `<div class="${item}click mr-5"></div>`
+    })
+
+}
+
 
 BTN_Banker.addEventListener("click", function(){
 
@@ -660,6 +678,7 @@ BTN_Banker.addEventListener("click", function(){
     } 
 
     list.push("B");
+    viewClick()
 
     // 연패 기록
     LoseRecode()
