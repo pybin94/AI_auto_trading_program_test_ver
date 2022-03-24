@@ -341,9 +341,11 @@ BTN_Player.addEventListener("click", () => {
         gameResultArr.push(playerRest[2])
         nowLevelArr.push("playerRest[2]")
     } else if ( nowLevelArr.slice(-1)[0] == "playerMarginA[8]" ) {
-        
+        gameResultArr.push(playerMarginA[0])
+        nowLevelArr.push("(playerMarginA[0]")
     } else if ( nowLevelArr.slice(-1)[0] == "playerMarginB[8]" ) {
-
+        gameResultArr.push(playerMarginA[0])
+        nowLevelArr.push("(playerMarginA[0]")
     } 
 
 
@@ -569,9 +571,11 @@ BTN_Banker.addEventListener("click", () => {
         gameResultArr.push(bankerRest[2])
         nowLevelArr.push("bankerRest[2]")
     } else if ( nowLevelArr.slice(-1)[0] == "bankerMarginA[8]" ) {
-        
+        gameResultArr.push(bankerMarginA[0])
+        nowLevelArr.push("bankerMarginA[0]")
     } else if ( nowLevelArr.slice(-1)[0] == "bankerMarginB[8]" ) {
-
+        gameResultArr.push(bankerMarginA[0])
+        nowLevelArr.push("bankerMarginA[0]")
     } 
 
 
