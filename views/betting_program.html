@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>AI자동 매매 프로그램</title>
-    <link rel="stylesheet" href="../routes/betting_program.css">
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="betting_program.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 <body>
-    <div class="container">
+
+    <div class="wrap">
         <section class="flex cul-body">
             <div id="bettingScreen" class="screen betting-screen tac">게임 결과를 입력해주세요.</div>
         </section>
@@ -85,13 +87,13 @@
                     <option value="50">500,000</option>
                 </select>
                 <p class="mb-10 tac">게임 종류를 설정하세요</p>
-                <select name="" id="gameType" class="btn fz16 mb-20">
+                <select name="" id="gameType" class="btn fz16 mb-10">
                     <option value="0">바카라</option>
                     <option value="5">파워볼</option>
                 </select>
                 <p class="mb-10 tac">자동 리셋을 설정하세요</p>
                 <div class="flex">
-                    <select name="" id="levelLimit" class="btn fz16">
+                    <select name="" id="levelLimit" class="btn fz16 mb-10">
                         <option value="5">5단</option>
                         <option value="6">6단</option>
                         <option value="7">7단</option>
@@ -100,15 +102,18 @@
                         <option value="10" selected>10단</option>
                     </select>
                 </div>
-                <p class="tac mb-10">6단 설정후 6단 금액 손실시 리셋됩니다</p>
+                <p class="tac mb-10">스타팅을 선택해 주세요</p>
                 <div class="flex fz16">
-                    <div id="setOK" class="set-btn btn cur active">완료</div>
-                    <div id="setCancle" class="set-btn btn ml-5 cur">취소</div>
+                    <div id="setPlayer" class="set-btn btn btn-player cur active">플레이어</div>
+                    <div id="setBanker" class="set-btn btn btn-banker cur active">뱅커</div>
                 </div>
+                <div id="setCancle" class="set-btn btn cur mt-10">취소</div>
             </div>
         </div>
         <div id="resultView" class="resultView flex py-10"></div>
-    </div>
-    <script src="../routes/betting_program.js"></script>
+    </div>    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.4.1/socket.io.js" integrity="sha512-MgkNs0gNdrnOM7k+0L+wgiRc5aLgl74sJQKbIWegVIMvVGPc1+gc1L2oK9Wf/D9pq58eqIJAxOonYPVE5UwUFA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="login.js"></script>
+    <script src="betting_program.js"></script>
 </body>
 </html>
