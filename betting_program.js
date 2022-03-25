@@ -2,8 +2,8 @@ const playerMarginA = [10000,10000,15000,20000,-27000,-35000,-45000,-65000,-8500
 const playerMarginB = playerMarginA.map(item => item * 2);
 const bankerMarginA = [-10000,-10000,-15000,-20000,27000,35000,45000,65000,85000];
 const bankerMarginB = bankerMarginA.map(item => item * 2);
-const playerRest = [-30000, 30000, 30000, 45000]
-const bankerRest = [30000, -30000, -30000, -45000]
+const playerRest = [-10000, 10000, 10000, 15000]
+const bankerRest = [10000, -10000, -10000, -15000]
 
 // 입력값 설정
 
@@ -790,6 +790,8 @@ const setting = () => {
 
         gameResultArr.push(bankerMarginA[0])
         nowLevelArr.push("bankerMarginA[0]")
+
+
         
         betResult()
 
