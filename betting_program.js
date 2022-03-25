@@ -600,10 +600,10 @@ BTN_Banker.addEventListener("click", () => {
         gameResultArr.push(playerMarginB[4])
         nowLevelArr.push("playerMarginB[4]")
     } else if ( nowLevelArr.slice(-1)[0] == "playerMarginB[4]" ) {
-        gameResultArr.push(playerMarginA[2])
+        gameResultArr.push(bankerMarginA[2])
         nowLevelArr.push("playerMarginA[2]")
     } else if ( nowLevelArr.slice(-1)[0] == "playerMarginA[5]" ) {
-        gameResultArr.push(playerMarginB[5])
+        gameResultArr.push(bankerMarginB[5])
         nowLevelArr.push("playerMarginB[5]")
     } else if ( nowLevelArr.slice(-1)[0] == "playerMarginB[5]" ) {
         gameResultArr.push(bankerMarginA[3])
@@ -612,8 +612,8 @@ BTN_Banker.addEventListener("click", () => {
         gameResultArr.push(playerMarginB[6])
         nowLevelArr.push("playerMarginB[6]")
     } else if ( nowLevelArr.slice(-1)[0] == "playerMarginB[6]" ) {
-        gameResultArr.push(bankerMarginA[4])
-        nowLevelArr.push("bankerMarginB[4]")
+        gameResultArr.push(playerMarginA[4])
+        nowLevelArr.push("playerMarginB[4]")
     } else if ( nowLevelArr.slice(-1)[0] == "playerMarginA[7]" ) {
         gameResultArr.push(playerMarginB[7])
         nowLevelArr.push("playerMarginB[7]")
