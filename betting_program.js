@@ -411,11 +411,11 @@ BTN_Player.addEventListener("click", () => {
         gameResultArr.push(playerRest[1])
         nowLevelArr.push("playerRest[1]")
     } else if ( nowLevelArr.slice(-1)[0] == "playerRest[2]" ){
-        gameResultArr.push(playerRest[3])
-        nowLevelArr.push("playerRest[3]")
+        gameResultArr.push(playerRest[2])
+        nowLevelArr.push("playerRest[2]")
     } else if ( nowLevelArr.slice(-1)[0] == "playerRest[3]" ){
-        gameResultArr.push(playerMarginA[8])
-        nowLevelArr.push("playerMarginA[8]")
+        gameResultArr.push(playerRest[2])
+        nowLevelArr.push("playerRest[2]")
     } else if( nowLevelArr.slice(-1)[0] == "bankerRest[0]" ){
         gameResultArr.push(bankerRest[0])
         nowLevelArr.push("bankerRest[0]")
@@ -423,8 +423,8 @@ BTN_Player.addEventListener("click", () => {
         gameResultArr.push(bankerMarginA[6])
         nowLevelArr.push("bankerMarginA[6]")
     } else if ( nowLevelArr.slice(-1)[0] == "bankerRest[2]" ){
-        gameResultArr.push(bankerRest[2])
-        nowLevelArr.push("bankerRest[2]")
+        gameResultArr.push(bankerRest[3])
+        nowLevelArr.push("bankerRest[3]")
     } else if ( nowLevelArr.slice(-1)[0] == "bankerRest[3]" ){
         gameResultArr.push(bankerMarginA[8])
         nowLevelArr.push("bankerMarginA[8]")
@@ -633,11 +633,11 @@ BTN_Banker.addEventListener("click", () => {
         gameResultArr.push(bankerRest[1])
         nowLevelArr.push("bankerRest[1]")
     } else if ( nowLevelArr.slice(-1)[0] == "bankerRest[2]" ){
-        gameResultArr.push(bankerRest[3])
-        nowLevelArr.push("bankerRest[3]")
+        gameResultArr.push(bankerRest[2])
+        nowLevelArr.push("bankerRest[2]")
     } else if ( nowLevelArr.slice(-1)[0] == "bankerRest[3]" ){
-        gameResultArr.push(bankerMarginA[8])
-        nowLevelArr.push("bankerMarginA[8]")
+        gameResultArr.push(bankerMarginA[2])
+        nowLevelArr.push("bankerMarginA[2]")
     } else if( nowLevelArr.slice(-1)[0] == "playerRest[0]" ){
         gameResultArr.push(playerRest[0])
         nowLevelArr.push("playerRest[0]")
@@ -645,11 +645,11 @@ BTN_Banker.addEventListener("click", () => {
         gameResultArr.push(playerMarginA[6])
         nowLevelArr.push("playerMarginA[6]")
     } else if ( nowLevelArr.slice(-1)[0] == "playerRest[2]" ){
-        gameResultArr.push(playerRest[2])
-        nowLevelArr.push("playerRest[2]")
+        gameResultArr.push(playerRest[3])
+        nowLevelArr.push("playerRest[3]")
     } else if ( nowLevelArr.slice(-1)[0] == "playerRest[3]" ){
-        gameResultArr.push(playerMarginA[2])
-        nowLevelArr.push("playerMarginA[2]")
+        gameResultArr.push(playerMarginA[8])
+        nowLevelArr.push("playerMarginA[8]")
     } 
 
     console.log(nowLevelArr)
