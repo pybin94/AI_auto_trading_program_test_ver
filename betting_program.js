@@ -1,6 +1,6 @@
-const playerMarginA = [10000,10000,15000,20000,-27000,-35000,-45000,-65000,-85000];
+const playerMarginA = [10000,10000,15000,20000,-27000,-35000,-48000,-65000,-85000];
 const playerMarginB = playerMarginA.map(item => item * 2);
-const bankerMarginA = [-10000,-10000,-15000,-20000,27000,35000,45000,65000,85000];
+const bankerMarginA = [-10000,-10000,-15000,-20000,27000,35000,48000,65000,85000];
 const bankerMarginB = bankerMarginA.map(item => item * 2);
 const playerRest = [-10000, 10000, 10000, 15000]
 const bankerRest = [10000, -10000, -10000, -15000]
@@ -420,14 +420,14 @@ BTN_Player.addEventListener("click", () => {
         gameResultArr.push(bankerRest[0])
         nowLevelArr.push("bankerRest[0]")
     } else if ( nowLevelArr.slice(-1)[0] == "bankerRest[1]" ){
-        gameResultArr.push(bankerMarginB[6])
-        nowLevelArr.push("bankerMarginB[6]")
+        gameResultArr.push(bankerMarginA[6])
+        nowLevelArr.push("bankerMarginA[6]")
     } else if ( nowLevelArr.slice(-1)[0] == "bankerRest[2]" ){
         gameResultArr.push(bankerRest[3])
         nowLevelArr.push("bankerRest[3]")
     } else if ( nowLevelArr.slice(-1)[0] == "bankerRest[3]" ){
-        gameResultArr.push(playerMarginA[8])
-        nowLevelArr.push("playerMarginA[8]")
+        gameResultArr.push(bankerMarginA[8])
+        nowLevelArr.push("bankerMarginA[8]")
     } 
 
     console.log(nowLevelArr)
@@ -642,14 +642,14 @@ BTN_Banker.addEventListener("click", () => {
         gameResultArr.push(playerRest[0])
         nowLevelArr.push("playerRest[0]")
     } else if ( nowLevelArr.slice(-1)[0] == "playerRest[1]" ){
-        gameResultArr.push(playerMarginB[6])
-        nowLevelArr.push("playerMarginB[6]")
+        gameResultArr.push(playerMarginA[6])
+        nowLevelArr.push("playerMarginA[6]")
     } else if ( nowLevelArr.slice(-1)[0] == "playerRest[2]" ){
         gameResultArr.push(playerRest[3])
         nowLevelArr.push("playerRest[3]")
     } else if ( nowLevelArr.slice(-1)[0] == "playerRest[3]" ){
-        gameResultArr.push(bankerMarginA[8])
-        nowLevelArr.push("bankerMarginA[8]")
+        gameResultArr.push(playerMarginA[8])
+        nowLevelArr.push("playerMarginA[8]")
     } 
 
     console.log(nowLevelArr)
