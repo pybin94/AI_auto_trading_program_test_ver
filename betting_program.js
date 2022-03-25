@@ -121,6 +121,13 @@ const nowPriceLose = () => {       // 현재금액
 }
 
 
+const starting = () => {   // 시작 금액
+
+    startAmountValue = Number(priceInput.value);
+    nowPriceValueArr = [startAmountValue]
+    startingAmount.innerHTML = startAmountValue.toLocaleString('ko-KR');
+}
+
 const gameReset = () => {       // 게임 리셋
 
     revertBtn.disabled = false;     // 뒤로가기 버튼 해제
@@ -153,10 +160,7 @@ const gameReset = () => {       // 게임 리셋
     playerScoreArr = [0]
     bankerScoreArr = [0]
     
-    startAmountValue = Number(priceInput.value);
-
-    nowPriceValueArr = [startAmountValue]
-    startingAmount.innerHTML = startAmountValue.toLocaleString('ko-KR');
+    starting()
     nowPrice.innerHTML = startAmountValue.toLocaleString('ko-KR');
 
     nowProfit()
@@ -346,10 +350,7 @@ BTN_Player.addEventListener("click", () => {
     } else if ( nowLevelArr.slice(-1)[0] == "playerMarginB[8]" ) {
         gameResultArr.push(playerMarginA[0])
         nowLevelArr.push("(playerMarginA[0]")
-    } 
-
-
-    if (nowLevelArr.slice(-1)[0] == "bankerMarginA[0]" ) {
+    } else if (nowLevelArr.slice(-1)[0] == "bankerMarginA[0]" ) {
         gameResultArr.push(bankerMarginA[1])
         nowLevelArr.push("bankerMarginA[1]")
     } else if ( nowLevelArr.slice(-1)[0] == "bankerMarginB[0]" ) {
@@ -403,10 +404,7 @@ BTN_Player.addEventListener("click", () => {
     } else if ( nowLevelArr.slice(-1)[0] == "bankerMarginB[8]" ) {
         gameResultArr.push(bankerMarginB[6])
         nowLevelArr.push("bankerMarginB[6]")
-    } 
-
-
-    if( nowLevelArr.slice(-1)[0] == "playerRest[0]" ){
+    } else if( nowLevelArr.slice(-1)[0] == "playerRest[0]" ){
         gameResultArr.push(playerMarginA[2])
         nowLevelArr.push("playerMarginA[2]")
     } else if ( nowLevelArr.slice(-1)[0] == "playerRest[1]" ){
@@ -418,9 +416,7 @@ BTN_Player.addEventListener("click", () => {
     } else if ( nowLevelArr.slice(-1)[0] == "playerRest[3]" ){
         gameResultArr.push(playerRest[2])
         nowLevelArr.push("playerRest[2]")
-    } 
-
-    if( nowLevelArr.slice(-1)[0] == "bankerRest[0]" ){
+    } else if( nowLevelArr.slice(-1)[0] == "bankerRest[0]" ){
         gameResultArr.push(bankerRest[0])
         nowLevelArr.push("bankerRest[0]")
     } else if ( nowLevelArr.slice(-1)[0] == "bankerRest[1]" ){
@@ -576,10 +572,7 @@ BTN_Banker.addEventListener("click", () => {
     } else if ( nowLevelArr.slice(-1)[0] == "bankerMarginB[8]" ) {
         gameResultArr.push(bankerMarginA[0])
         nowLevelArr.push("bankerMarginA[0]")
-    } 
-
-
-    if (nowLevelArr.slice(-1)[0] == "playerMarginA[0]" ) {
+    } else if (nowLevelArr.slice(-1)[0] == "playerMarginA[0]" ) {
         gameResultArr.push(playerMarginA[1])
         nowLevelArr.push("playerMarginA[1]")
     } else if ( nowLevelArr.slice(-1)[0] == "playerMarginB[0]" ) {
@@ -633,10 +626,7 @@ BTN_Banker.addEventListener("click", () => {
     } else if ( nowLevelArr.slice(-1)[0] == "playerMarginB[8]" ) {
         gameResultArr.push(playerMarginB[6])
         nowLevelArr.push("playerMarginB[6]")
-    } 
-
-
-    if( nowLevelArr.slice(-1)[0] == "bankerRest[0]" ){
+    } else if( nowLevelArr.slice(-1)[0] == "bankerRest[0]" ){
         gameResultArr.push(bankerMarginA[2])
         nowLevelArr.push("bankerMarginA[2]")
     } else if ( nowLevelArr.slice(-1)[0] == "bankerRest[1]" ){
@@ -648,9 +638,7 @@ BTN_Banker.addEventListener("click", () => {
     } else if ( nowLevelArr.slice(-1)[0] == "bankerRest[3]" ){
         gameResultArr.push(bankerRest[2])
         nowLevelArr.push("bankerRest[2]")
-    } 
-
-    if( nowLevelArr.slice(-1)[0] == "playerRest[0]" ){
+    } else if( nowLevelArr.slice(-1)[0] == "playerRest[0]" ){
         gameResultArr.push(playerRest[0])
         nowLevelArr.push("playerRest[0]")
     } else if ( nowLevelArr.slice(-1)[0] == "playerRest[1]" ){
@@ -759,6 +747,7 @@ const setting = () => {
         gameResultArr.push(playerMarginA[0])
         nowLevelArr.push("playerMarginA[0]")
 
+        starting()
         betResult()
 
         if( priceInput.value == '' || priceInput.value < 10000){
@@ -792,7 +781,7 @@ const setting = () => {
         nowLevelArr.push("bankerMarginA[0]")
 
 
-        
+        starting()
         betResult()
 
         if( priceInput.value == '' || priceInput.value < 10000){
