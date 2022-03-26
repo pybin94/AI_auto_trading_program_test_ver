@@ -377,7 +377,7 @@ BTN_Player.addEventListener("click", () => {
         nowLevelArr.push("bankerMarginB[6]")
     } else if ( nowLevelArr.slice(-1)[0] === "bankerMarginB[6]" ) {
         gameResultArr.push(bankerMarginA[4])
-        nowLevelArr.push("bankerMarginB[4]")
+        nowLevelArr.push("bankerMarginA[4]")
     } else if ( nowLevelArr.slice(-1)[0] === "bankerMarginA[7]" ) {
         gameResultArr.push(bankerMarginB[7])
         nowLevelArr.push("bankerMarginB[7]")
