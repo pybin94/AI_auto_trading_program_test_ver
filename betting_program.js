@@ -1,6 +1,6 @@
-const playerMarginA = [10000,10000,15000,20000,-27000,-35000,-48000,-65000,-85000];
+const playerMarginA = [10000,10000,15000,20000,-30000,-40000,-50000,-65000,-85000];
 const playerMarginB = playerMarginA.map(item => item * 2);
-const bankerMarginA = [-10000,-10000,-15000,-20000,27000,35000,48000,65000,85000];
+const bankerMarginA = [-10000,-10000,-15000,-20000,30000,40000,50000,65000,85000];
 const bankerMarginB = bankerMarginA.map(item => item * 2);
 const playerRest = [-10000, 10000, 10000, 15000]
 const bankerRest = [10000, -10000, -10000, -15000]
@@ -331,8 +331,10 @@ BTN_Player.addEventListener("click", () => {
         gameResultArr.push(playerRest[2])
         nowLevelArr.push("playerRest[2]")
     } else if ( nowLevelArr.slice(-1)[0] === "playerMarginA[8]" ) {
+        alert("마지막 단계를 넘어 게임이 초기화 됩니다.");
         return gameReset()
     } else if ( nowLevelArr.slice(-1)[0] === "playerMarginB[8]" ) {
+        alert("마지막 단계를 넘어 게임이 초기화 됩니다.");
         return gameReset()
     } else if (nowLevelArr.slice(-1)[0] === "bankerMarginA[0]" ) {
         gameResultArr.push(bankerMarginA[1])
@@ -423,12 +425,12 @@ BTN_Player.addEventListener("click", () => {
     betResult()
 
 
-    if( bankerScoreArr.slice(-1)[0] >= limit ){
+    // if( bankerScoreArr.slice(-1)[0] >= limit ){
 
-        alert( "자동 리셋에 도달했습니다. 게임을 다시 시작합니다." );
-        return gameReset();
+    //     alert( "자동 리셋에 도달했습니다. 게임을 다시 시작합니다." );
+    //     return gameReset();
 
-    }
+    // }
 
 
 
@@ -551,8 +553,10 @@ BTN_Banker.addEventListener("click", () => {
         gameResultArr.push(bankerRest[2])
         nowLevelArr.push("bankerRest[2]")
     } else if ( nowLevelArr.slice(-1)[0] === "bankerMarginA[8]" ) {
+        alert("마지막 단계를 넘어 게임이 초기화 됩니다.");
         return gameReset()
     } else if ( nowLevelArr.slice(-1)[0] === "bankerMarginB[8]" ) {
+        alert("마지막 단계를 넘어 게임이 초기화 됩니다.");
         return gameReset()
     } else if (nowLevelArr.slice(-1)[0] === "playerMarginA[0]" ) {
         gameResultArr.push(playerMarginA[1])
