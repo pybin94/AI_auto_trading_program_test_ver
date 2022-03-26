@@ -296,136 +296,134 @@ BTN_Player.addEventListener("click", () => {
 
     // 계산
 
-    if (nowLevelArr.slice(-1)[0] == "playerMarginA[0]" ) {
+    if (nowLevelArr.slice(-1)[0] === "playerMarginA[0]" ) {
         gameResultArr.push(playerMarginB[0])
         nowLevelArr.push("playerMarginB[0]")
-    } else if ( nowLevelArr.slice(-1)[0] == "playerMarginB[0]" ) {
+    } else if ( nowLevelArr.slice(-1)[0] === "playerMarginB[0]" ) {
         gameResultArr.push(playerMarginA[0])
         nowLevelArr.push("playerMarginA[0]")
-    } else if ( nowLevelArr.slice(-1)[0] == "playerMarginA[1]" ) {
+    } else if ( nowLevelArr.slice(-1)[0] === "playerMarginA[1]" ) {
         gameResultArr.push(playerMarginB[1])
         nowLevelArr.push("playerMarginB[1]")
-    } else if ( nowLevelArr.slice(-1)[0] == "playerMarginB[1]" ) {
+    } else if ( nowLevelArr.slice(-1)[0] === "playerMarginB[1]" ) {
         gameResultArr.push(playerMarginA[0])
         nowLevelArr.push("playerMarginA[0]")
-    } else if ( nowLevelArr.slice(-1)[0] == "playerMarginA[2]" ) {
+    } else if ( nowLevelArr.slice(-1)[0] === "playerMarginA[2]" ) {
         gameResultArr.push(playerMarginB[2])
         nowLevelArr.push("playerMarginB[2]")
-    } else if ( nowLevelArr.slice(-1)[0] == "playerMarginB[2]" ) {
+    } else if ( nowLevelArr.slice(-1)[0] === "playerMarginB[2]" ) {
         gameResultArr.push(playerMarginA[0])
         nowLevelArr.push("playerMarginA[0]")
-    } else if ( nowLevelArr.slice(-1)[0] == "playerMarginA[3]" ) {
+    } else if ( nowLevelArr.slice(-1)[0] === "playerMarginA[3]" ) {
         gameResultArr.push(playerMarginB[3])
         nowLevelArr.push("playerMarginB[3]")
-    } else if ( nowLevelArr.slice(-1)[0] == "playerMarginB[3]" ) {
+    } else if ( nowLevelArr.slice(-1)[0] === "playerMarginB[3]" ) {
         gameResultArr.push(playerMarginA[1])
         nowLevelArr.push("playerMarginA[1]")
-    } else if ( nowLevelArr.slice(-1)[0] == "playerMarginA[4]" ) {
+    } else if ( nowLevelArr.slice(-1)[0] === "playerMarginA[4]" ) {
         gameResultArr.push(playerMarginA[5])
         nowLevelArr.push("playerMarginA[5]")
-    } else if ( nowLevelArr.slice(-1)[0] == "playerMarginB[4]" ) {
+    } else if ( nowLevelArr.slice(-1)[0] === "playerMarginB[4]" ) {
         gameResultArr.push(playerMarginA[5])
         nowLevelArr.push("playerMarginA[5]")
-    } else if ( nowLevelArr.slice(-1)[0] == "playerMarginA[5]" ) {
+    } else if ( nowLevelArr.slice(-1)[0] === "playerMarginA[5]" ) {
         gameResultArr.push(playerRest[1])
         nowLevelArr.push("playerRest[1]")
-    } else if ( nowLevelArr.slice(-1)[0] == "playerMarginB[5]" ) {
+    } else if ( nowLevelArr.slice(-1)[0] === "playerMarginB[5]" ) {
         gameResultArr.push(playerRest[1])
         nowLevelArr.push("playerRest[1]")
-    } else if ( nowLevelArr.slice(-1)[0] == "playerMarginA[6]" ) {
+    } else if ( nowLevelArr.slice(-1)[0] === "playerMarginA[6]" ) {
         gameResultArr.push(playerMarginA[7])
         nowLevelArr.push("playerMarginA[7]")
-    } else if ( nowLevelArr.slice(-1)[0] == "playerMarginB[6]" ) {
+    } else if ( nowLevelArr.slice(-1)[0] === "playerMarginB[6]" ) {
         gameResultArr.push(playerMarginA[7])
         nowLevelArr.push("playerMarginA[7]")
-    } else if ( nowLevelArr.slice(-1)[0] == "playerMarginA[7]" ) {
+    } else if ( nowLevelArr.slice(-1)[0] === "playerMarginA[7]" ) {
         gameResultArr.push(playerRest[2])
         nowLevelArr.push("playerRest[2]")
-    } else if ( nowLevelArr.slice(-1)[0] == "playerMarginB[7]" ) {
+    } else if ( nowLevelArr.slice(-1)[0] === "playerMarginB[7]" ) {
         gameResultArr.push(playerRest[2])
         nowLevelArr.push("playerRest[2]")
-    } else if ( nowLevelArr.slice(-1)[0] == "playerMarginA[8]" ) {
-        gameResultArr.push(playerMarginA[0])
-        nowLevelArr.push("playerMarginA[0]")
-    } else if ( nowLevelArr.slice(-1)[0] == "playerMarginB[8]" ) {
-        gameResultArr.push(playerMarginA[0])
-        nowLevelArr.push("playerMarginA[0]")
-    } else if (nowLevelArr.slice(-1)[0] == "bankerMarginA[0]" ) {
+    } else if ( nowLevelArr.slice(-1)[0] === "playerMarginA[8]" ) {
+        return gameReset()
+    } else if ( nowLevelArr.slice(-1)[0] === "playerMarginB[8]" ) {
+        return gameReset()
+    } else if (nowLevelArr.slice(-1)[0] === "bankerMarginA[0]" ) {
         gameResultArr.push(bankerMarginA[1])
         nowLevelArr.push("bankerMarginA[1]")
-    } else if ( nowLevelArr.slice(-1)[0] == "bankerMarginB[0]" ) {
+    } else if ( nowLevelArr.slice(-1)[0] === "bankerMarginB[0]" ) {
         gameResultArr.push(bankerMarginA[1])
         nowLevelArr.push("bankerMarginA[1]")
-    } else if ( nowLevelArr.slice(-1)[0] == "bankerMarginA[1]" ) {
+    } else if ( nowLevelArr.slice(-1)[0] === "bankerMarginA[1]" ) {
         gameResultArr.push(bankerRest[0])
         nowLevelArr.push("bankerRest[0]")
-    } else if ( nowLevelArr.slice(-1)[0] == "bankerMarginB[1]" ) {
+    } else if ( nowLevelArr.slice(-1)[0] === "bankerMarginB[1]" ) {
         gameResultArr.push(bankerRest[0])
         nowLevelArr.push("bankerRest[0]")
-    } else if ( nowLevelArr.slice(-1)[0] == "bankerMarginA[2]" ) {
+    } else if ( nowLevelArr.slice(-1)[0] === "bankerMarginA[2]" ) {
         gameResultArr.push(bankerMarginA[3])
         nowLevelArr.push("bankerMarginA[3]")
-    } else if ( nowLevelArr.slice(-1)[0] == "bankerMarginB[2]" ) {
+    } else if ( nowLevelArr.slice(-1)[0] === "bankerMarginB[2]" ) {
         gameResultArr.push(bankerMarginA[3])
         nowLevelArr.push("bankerMarginA[3]")
-    } else if ( nowLevelArr.slice(-1)[0] == "bankerMarginA[3]" ) {
+    } else if ( nowLevelArr.slice(-1)[0] === "bankerMarginA[3]" ) {
         gameResultArr.push(bankerMarginA[4])
         nowLevelArr.push("bankerMarginA[4]")
-    } else if ( nowLevelArr.slice(-1)[0] == "bankerMarginB[3]" ) {
+    } else if ( nowLevelArr.slice(-1)[0] === "bankerMarginB[3]" ) {
         gameResultArr.push(bankerMarginA[4])
         nowLevelArr.push("bankerMarginA[4]")
-    } else if ( nowLevelArr.slice(-1)[0] == "bankerMarginA[4]" ) {
+    } else if ( nowLevelArr.slice(-1)[0] === "bankerMarginA[4]" ) {
         gameResultArr.push(bankerMarginB[4])
         nowLevelArr.push("bankerMarginB[4]")
-    } else if ( nowLevelArr.slice(-1)[0] == "bankerMarginB[4]" ) {
+    } else if ( nowLevelArr.slice(-1)[0] === "bankerMarginB[4]" ) {
         gameResultArr.push(playerMarginA[2])
         nowLevelArr.push("playerMarginA[2]")
-    } else if ( nowLevelArr.slice(-1)[0] == "bankerMarginA[5]" ) {
+    } else if ( nowLevelArr.slice(-1)[0] === "bankerMarginA[5]" ) {
         gameResultArr.push(bankerMarginB[5])
         nowLevelArr.push("bankerMarginB[5]")
-    } else if ( nowLevelArr.slice(-1)[0] == "bankerMarginB[5]" ) {
+    } else if ( nowLevelArr.slice(-1)[0] === "bankerMarginB[5]" ) {
         gameResultArr.push(playerMarginA[3])
         nowLevelArr.push("playerMarginA[3]")
-    } else if ( nowLevelArr.slice(-1)[0] == "bankerMarginA[6]" ) {
+    } else if ( nowLevelArr.slice(-1)[0] === "bankerMarginA[6]" ) {
         gameResultArr.push(bankerMarginB[6])
         nowLevelArr.push("bankerMarginB[6]")
-    } else if ( nowLevelArr.slice(-1)[0] == "bankerMarginB[6]" ) {
+    } else if ( nowLevelArr.slice(-1)[0] === "bankerMarginB[6]" ) {
         gameResultArr.push(bankerMarginA[4])
         nowLevelArr.push("bankerMarginB[4]")
-    } else if ( nowLevelArr.slice(-1)[0] == "bankerMarginA[7]" ) {
+    } else if ( nowLevelArr.slice(-1)[0] === "bankerMarginA[7]" ) {
         gameResultArr.push(bankerMarginB[7])
         nowLevelArr.push("bankerMarginB[7]")
-    } else if ( nowLevelArr.slice(-1)[0] == "bankerMarginB[7]" ) {
+    } else if ( nowLevelArr.slice(-1)[0] === "bankerMarginB[7]" ) {
         gameResultArr.push(bankerMarginB[5])
         nowLevelArr.push("bankerMarginB[5]")
-    } else if ( nowLevelArr.slice(-1)[0] == "bankerMarginA[8]" ) {
+    } else if ( nowLevelArr.slice(-1)[0] === "bankerMarginA[8]" ) {
         gameResultArr.push(bankerMarginB[8])
         nowLevelArr.push("bankerMarginB[8]")
-    } else if ( nowLevelArr.slice(-1)[0] == "bankerMarginB[8]" ) {
+    } else if ( nowLevelArr.slice(-1)[0] === "bankerMarginB[8]" ) {
         gameResultArr.push(bankerMarginB[6])
         nowLevelArr.push("bankerMarginB[6]")
-    } else if( nowLevelArr.slice(-1)[0] == "playerRest[0]" ){
+    } else if( nowLevelArr.slice(-1)[0] === "playerRest[0]" ){
         gameResultArr.push(playerMarginA[2])
         nowLevelArr.push("playerMarginA[2]")
-    } else if ( nowLevelArr.slice(-1)[0] == "playerRest[1]" ){
+    } else if ( nowLevelArr.slice(-1)[0] === "playerRest[1]" ){
         gameResultArr.push(playerRest[1])
         nowLevelArr.push("playerRest[1]")
-    } else if ( nowLevelArr.slice(-1)[0] == "playerRest[2]" ){
+    } else if ( nowLevelArr.slice(-1)[0] === "playerRest[2]" ){
         gameResultArr.push(playerRest[2])
         nowLevelArr.push("playerRest[2]")
-    } else if ( nowLevelArr.slice(-1)[0] == "playerRest[3]" ){
+    } else if ( nowLevelArr.slice(-1)[0] === "playerRest[3]" ){
         gameResultArr.push(playerRest[2])
         nowLevelArr.push("playerRest[2]")
-    } else if( nowLevelArr.slice(-1)[0] == "bankerRest[0]" ){
+    } else if( nowLevelArr.slice(-1)[0] === "bankerRest[0]" ){
         gameResultArr.push(bankerRest[0])
         nowLevelArr.push("bankerRest[0]")
-    } else if ( nowLevelArr.slice(-1)[0] == "bankerRest[1]" ){
+    } else if ( nowLevelArr.slice(-1)[0] === "bankerRest[1]" ){
         gameResultArr.push(bankerMarginA[6])
         nowLevelArr.push("bankerMarginA[6]")
-    } else if ( nowLevelArr.slice(-1)[0] == "bankerRest[2]" ){
+    } else if ( nowLevelArr.slice(-1)[0] === "bankerRest[2]" ){
         gameResultArr.push(bankerRest[3])
         nowLevelArr.push("bankerRest[3]")
-    } else if ( nowLevelArr.slice(-1)[0] == "bankerRest[3]" ){
+    } else if ( nowLevelArr.slice(-1)[0] === "bankerRest[3]" ){
         gameResultArr.push(bankerMarginA[8])
         nowLevelArr.push("bankerMarginA[8]")
     } 
@@ -518,136 +516,134 @@ BTN_Banker.addEventListener("click", () => {
 
     // 계산
 
-    if (nowLevelArr.slice(-1)[0] == "bankerMarginA[0]" ) {
+    if (nowLevelArr.slice(-1)[0] === "bankerMarginA[0]" ) {
         gameResultArr.push(bankerMarginB[0])
         nowLevelArr.push("bankerMarginB[0]")
-    } else if ( nowLevelArr.slice(-1)[0] == "bankerMarginB[0]" ) {
+    } else if ( nowLevelArr.slice(-1)[0] === "bankerMarginB[0]" ) {
         gameResultArr.push(bankerMarginA[0])
         nowLevelArr.push("bankerMarginA[0]")
-    } else if ( nowLevelArr.slice(-1)[0] == "bankerMarginA[1]" ) {
+    } else if ( nowLevelArr.slice(-1)[0] === "bankerMarginA[1]" ) {
         gameResultArr.push(bankerMarginB[1])
         nowLevelArr.push("bankerMarginB[1]")
-    } else if ( nowLevelArr.slice(-1)[0] == "bankerMarginB[1]" ) {
+    } else if ( nowLevelArr.slice(-1)[0] === "bankerMarginB[1]" ) {
         gameResultArr.push(bankerMarginA[0])
         nowLevelArr.push("bankerMarginA[0]")
-    } else if ( nowLevelArr.slice(-1)[0] == "bankerMarginA[2]" ) {
+    } else if ( nowLevelArr.slice(-1)[0] === "bankerMarginA[2]" ) {
         gameResultArr.push(bankerMarginB[2])
         nowLevelArr.push("bankerMarginB[2]")
-    } else if ( nowLevelArr.slice(-1)[0] == "bankerMarginB[2]" ) {
+    } else if ( nowLevelArr.slice(-1)[0] === "bankerMarginB[2]" ) {
         gameResultArr.push(bankerMarginA[0])
         nowLevelArr.push("bankerMarginA[0]")
-    } else if ( nowLevelArr.slice(-1)[0] == "bankerMarginA[3]" ) {
+    } else if ( nowLevelArr.slice(-1)[0] === "bankerMarginA[3]" ) {
         gameResultArr.push(bankerMarginB[3])
         nowLevelArr.push("bankerMarginB[3]")
-    } else if ( nowLevelArr.slice(-1)[0] == "bankerMarginB[3]" ) {
+    } else if ( nowLevelArr.slice(-1)[0] === "bankerMarginB[3]" ) {
         gameResultArr.push(bankerMarginA[1])
         nowLevelArr.push("bankerMarginA[1]")
-    } else if ( nowLevelArr.slice(-1)[0] == "bankerMarginA[4]" ) {
+    } else if ( nowLevelArr.slice(-1)[0] === "bankerMarginA[4]" ) {
         gameResultArr.push(bankerMarginA[5])
         nowLevelArr.push("bankerMarginA[5]")
-    } else if ( nowLevelArr.slice(-1)[0] == "bankerMarginB[4]" ) {
+    } else if ( nowLevelArr.slice(-1)[0] === "bankerMarginB[4]" ) {
         gameResultArr.push(bankerMarginA[5])
         nowLevelArr.push("bankerMarginA[5]")
-    } else if ( nowLevelArr.slice(-1)[0] == "bankerMarginA[5]" ) {
+    } else if ( nowLevelArr.slice(-1)[0] === "bankerMarginA[5]" ) {
         gameResultArr.push(bankerRest[1])
         nowLevelArr.push("bankerRest[1]")
-    } else if ( nowLevelArr.slice(-1)[0] == "bankerMarginB[5]" ) {
+    } else if ( nowLevelArr.slice(-1)[0] === "bankerMarginB[5]" ) {
         gameResultArr.push(bankerRest[1])
         nowLevelArr.push("bankerRest[1]")
-    } else if ( nowLevelArr.slice(-1)[0] == "bankerMarginA[6]" ) {
+    } else if ( nowLevelArr.slice(-1)[0] === "bankerMarginA[6]" ) {
         gameResultArr.push(bankerMarginA[7])
         nowLevelArr.push("bankerMarginA[7]")
-    } else if ( nowLevelArr.slice(-1)[0] == "bankerMarginB[6]" ) {
+    } else if ( nowLevelArr.slice(-1)[0] === "bankerMarginB[6]" ) {
         gameResultArr.push(bankerMarginA[7])
         nowLevelArr.push("bankerMarginA[7]")
-    } else if ( nowLevelArr.slice(-1)[0] == "bankerMarginA[7]" ) {
+    } else if ( nowLevelArr.slice(-1)[0] === "bankerMarginA[7]" ) {
         gameResultArr.push(bankerRest[2])
         nowLevelArr.push("bankerRest[2]")
-    } else if ( nowLevelArr.slice(-1)[0] == "bankerMarginB[7]" ) {
+    } else if ( nowLevelArr.slice(-1)[0] === "bankerMarginB[7]" ) {
         gameResultArr.push(bankerRest[2])
         nowLevelArr.push("bankerRest[2]")
-    } else if ( nowLevelArr.slice(-1)[0] == "bankerMarginA[8]" ) {
-        gameResultArr.push(bankerMarginA[0])
-        nowLevelArr.push("bankerMarginA[0]")
-    } else if ( nowLevelArr.slice(-1)[0] == "bankerMarginB[8]" ) {
-        gameResultArr.push(bankerMarginA[0])
-        nowLevelArr.push("bankerMarginA[0]")
-    } else if (nowLevelArr.slice(-1)[0] == "playerMarginA[0]" ) {
+    } else if ( nowLevelArr.slice(-1)[0] === "bankerMarginA[8]" ) {
+        return gameReset()
+    } else if ( nowLevelArr.slice(-1)[0] === "bankerMarginB[8]" ) {
+        return gameReset()
+    } else if (nowLevelArr.slice(-1)[0] === "playerMarginA[0]" ) {
         gameResultArr.push(playerMarginA[1])
         nowLevelArr.push("playerMarginA[1]")
-    } else if ( nowLevelArr.slice(-1)[0] == "playerMarginB[0]" ) {
+    } else if ( nowLevelArr.slice(-1)[0] === "playerMarginB[0]" ) {
         gameResultArr.push(playerMarginA[1])
         nowLevelArr.push("playerMarginA[1]")
-    } else if ( nowLevelArr.slice(-1)[0] == "playerMarginA[1]" ) {
+    } else if ( nowLevelArr.slice(-1)[0] === "playerMarginA[1]" ) {
         gameResultArr.push(playerRest[0])
         nowLevelArr.push("playerRest[0]")
-    } else if ( nowLevelArr.slice(-1)[0] == "playerMarginB[1]" ) {
+    } else if ( nowLevelArr.slice(-1)[0] === "playerMarginB[1]" ) {
         gameResultArr.push(playerRest[0])
         nowLevelArr.push("playerRest[0]")
-    } else if ( nowLevelArr.slice(-1)[0] == "playerMarginA[2]" ) {
+    } else if ( nowLevelArr.slice(-1)[0] === "playerMarginA[2]" ) {
         gameResultArr.push(playerMarginA[3])
         nowLevelArr.push("playerMarginA[3]")
-    } else if ( nowLevelArr.slice(-1)[0] == "playerMarginB[2]" ) {
+    } else if ( nowLevelArr.slice(-1)[0] === "playerMarginB[2]" ) {
         gameResultArr.push(playerMarginA[3])
         nowLevelArr.push("playerMarginA[3]")
-    } else if ( nowLevelArr.slice(-1)[0] == "playerMarginA[3]" ) {
+    } else if ( nowLevelArr.slice(-1)[0] === "playerMarginA[3]" ) {
         gameResultArr.push(playerMarginA[4])
         nowLevelArr.push("playerMarginA[4]")
-    } else if ( nowLevelArr.slice(-1)[0] == "playerMarginB[3]" ) {
+    } else if ( nowLevelArr.slice(-1)[0] === "playerMarginB[3]" ) {
         gameResultArr.push(playerMarginA[4])
         nowLevelArr.push("playerMarginA[4]")
-    } else if ( nowLevelArr.slice(-1)[0] == "playerMarginA[4]" ) {
+    } else if ( nowLevelArr.slice(-1)[0] === "playerMarginA[4]" ) {
         gameResultArr.push(playerMarginB[4])
         nowLevelArr.push("playerMarginB[4]")
-    } else if ( nowLevelArr.slice(-1)[0] == "playerMarginB[4]" ) {
+    } else if ( nowLevelArr.slice(-1)[0] === "playerMarginB[4]" ) {
         gameResultArr.push(bankerMarginA[2])
         nowLevelArr.push("playerMarginA[2]")
-    } else if ( nowLevelArr.slice(-1)[0] == "playerMarginA[5]" ) {
+    } else if ( nowLevelArr.slice(-1)[0] === "playerMarginA[5]" ) {
         gameResultArr.push(bankerMarginB[5])
         nowLevelArr.push("playerMarginB[5]")
-    } else if ( nowLevelArr.slice(-1)[0] == "playerMarginB[5]" ) {
+    } else if ( nowLevelArr.slice(-1)[0] === "playerMarginB[5]" ) {
         gameResultArr.push(bankerMarginA[3])
         nowLevelArr.push("bankerMarginA[3]")
-    } else if ( nowLevelArr.slice(-1)[0] == "playerMarginA[6]" ) {
+    } else if ( nowLevelArr.slice(-1)[0] === "playerMarginA[6]" ) {
         gameResultArr.push(playerMarginB[6])
         nowLevelArr.push("playerMarginB[6]")
-    } else if ( nowLevelArr.slice(-1)[0] == "playerMarginB[6]" ) {
+    } else if ( nowLevelArr.slice(-1)[0] === "playerMarginB[6]" ) {
         gameResultArr.push(playerMarginA[4])
         nowLevelArr.push("playerMarginB[4]")
-    } else if ( nowLevelArr.slice(-1)[0] == "playerMarginA[7]" ) {
+    } else if ( nowLevelArr.slice(-1)[0] === "playerMarginA[7]" ) {
         gameResultArr.push(playerMarginB[7])
         nowLevelArr.push("playerMarginB[7]")
-    } else if ( nowLevelArr.slice(-1)[0] == "playerMarginB[7]" ) {
+    } else if ( nowLevelArr.slice(-1)[0] === "playerMarginB[7]" ) {
         gameResultArr.push(playerMarginB[5])
         nowLevelArr.push("playerMarginB[5]")
-    } else if ( nowLevelArr.slice(-1)[0] == "playerMarginA[8]" ) {
+    } else if ( nowLevelArr.slice(-1)[0] === "playerMarginA[8]" ) {
         gameResultArr.push(playerMarginB[8])
         nowLevelArr.push("playerMarginB[8]")
-    } else if ( nowLevelArr.slice(-1)[0] == "playerMarginB[8]" ) {
+    } else if ( nowLevelArr.slice(-1)[0] === "playerMarginB[8]" ) {
         gameResultArr.push(playerMarginB[6])
         nowLevelArr.push("playerMarginB[6]")
-    } else if( nowLevelArr.slice(-1)[0] == "bankerRest[0]" ){
+    } else if( nowLevelArr.slice(-1)[0] === "bankerRest[0]" ){
         gameResultArr.push(bankerMarginA[2])
         nowLevelArr.push("bankerMarginA[2]")
-    } else if ( nowLevelArr.slice(-1)[0] == "bankerRest[1]" ){
+    } else if ( nowLevelArr.slice(-1)[0] === "bankerRest[1]" ){
         gameResultArr.push(bankerRest[1])
         nowLevelArr.push("bankerRest[1]")
-    } else if ( nowLevelArr.slice(-1)[0] == "bankerRest[2]" ){
+    } else if ( nowLevelArr.slice(-1)[0] === "bankerRest[2]" ){
         gameResultArr.push(bankerRest[2])
         nowLevelArr.push("bankerRest[2]")
-    } else if ( nowLevelArr.slice(-1)[0] == "bankerRest[3]" ){
+    } else if ( nowLevelArr.slice(-1)[0] === "bankerRest[3]" ){
         gameResultArr.push(bankerMarginA[2])
         nowLevelArr.push("bankerMarginA[2]")
-    } else if( nowLevelArr.slice(-1)[0] == "playerRest[0]" ){
+    } else if( nowLevelArr.slice(-1)[0] === "playerRest[0]" ){
         gameResultArr.push(playerRest[0])
         nowLevelArr.push("playerRest[0]")
-    } else if ( nowLevelArr.slice(-1)[0] == "playerRest[1]" ){
+    } else if ( nowLevelArr.slice(-1)[0] === "playerRest[1]" ){
         gameResultArr.push(playerMarginA[6])
         nowLevelArr.push("playerMarginA[6]")
-    } else if ( nowLevelArr.slice(-1)[0] == "playerRest[2]" ){
+    } else if ( nowLevelArr.slice(-1)[0] === "playerRest[2]" ){
         gameResultArr.push(playerRest[3])
         nowLevelArr.push("playerRest[3]")
-    } else if ( nowLevelArr.slice(-1)[0] == "playerRest[3]" ){
+    } else if ( nowLevelArr.slice(-1)[0] === "playerRest[3]" ){
         gameResultArr.push(playerMarginA[8])
         nowLevelArr.push("playerMarginA[8]")
     } 
