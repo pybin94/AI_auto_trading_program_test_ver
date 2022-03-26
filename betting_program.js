@@ -20,6 +20,8 @@ const profit = document.querySelector("#profit");
 const revertBtn = document.querySelector("#revert");
 const priceInput = document.querySelector("#priceInput");
 const resultView = document.querySelector("#resultView");
+const cover = document.querySelector("#cover");
+const setCancle = document.querySelector("#setCancle");
 
 let premium = 0;
 let limit = 10;
@@ -29,9 +31,6 @@ let sumGameResult = 0;
 
 // let betAmountValue = sumGameResult;         // 배팅 금액             
 let profitValue = 0;                        // 합산 손익
-
-let playerScore = 0;
-let bankerScore = 0;
 
 
 let list = [];                      // 버튼
@@ -46,10 +45,6 @@ let profitValueArr = [];
 let nowStatusArr = []
 
 
-let playerScoreArr = [0];
-let bankerScoreArr = [0];
-
-
 let winRateCheck = 0;
 
 let winCountArr = [0];
@@ -61,12 +56,6 @@ const bugTest = () => {
     // console.log(list)
     // console.log(limit)
     // console.log(gameResultAllArr)
-    
-    // console.log(playerScoreArr)
-    // console.log(bankerScoreArr)
-
-    // document.querySelector("#playerScore").innerHTML = playerScoreArr.slice(-1)[0];
-    // document.querySelector("#bankerScore").innerHTML = bankerScoreArr.slice(-1)[0];
 
 }
 
@@ -132,14 +121,14 @@ const gameReset = () => {       // 게임 리셋
 
     revertBtn.disabled = false;     // 뒤로가기 버튼 해제
     document.querySelector("#revertLabel").style.color = "inherit"
-    bettingScreen.innerHTML = gameResultArr.slice(-1)[0];
     bettingScreen.style.borderColor = "#c7c7c7";
     bettingScreen.style.boxShadow = "0 0 0 1px #c7c7c7 inset";
     bettingScreen.style.color = "inherit";
     resultView.innerHTML = "";  // 하단 데이터 초기화
+    
+    cover.classList.add("active");
+    setCancle.classList.remove("active");
 
-    playerScore = 0;
-    bankerScore = 0;
     winCount = 0;
     loseCount = 0;
     winRateCheck = 0;
@@ -157,8 +146,6 @@ const gameReset = () => {       // 게임 리셋
     winCountArr = [0];
     loseCountArr = [0];
 
-    playerScoreArr = [0]
-    bankerScoreArr = [0]
     
     starting()
     nowPrice.innerHTML = startAmountValue.toLocaleString('ko-KR');
@@ -178,8 +165,6 @@ const revert = () => {      // 게임 뒤로 가기
     loseCountArr.splice(-1,1);
     winCountArr.splice(-1,1);
     
-    playerScoreArr.splice(-1,1);
-    bankerScoreArr.splice(-1,1);
 
     win.innerHTML = winCountArr.slice(-1)[0];
     lose.innerHTML = loseCountArr.slice(-1)[0];
@@ -296,6 +281,7 @@ BTN_Player.addEventListener("click", () => {
 
     // 계산
 
+    
     if (nowLevelArr.slice(-1)[0] === "playerMarginA[0]" ) {
         gameResultArr.push(playerMarginB[0])
         nowLevelArr.push("playerMarginB[0]")
@@ -394,14 +380,14 @@ BTN_Player.addEventListener("click", () => {
         gameResultArr.push(bankerMarginB[7])
         nowLevelArr.push("bankerMarginB[7]")
     } else if ( nowLevelArr.slice(-1)[0] === "bankerMarginB[7]" ) {
-        gameResultArr.push(bankerMarginB[5])
-        nowLevelArr.push("bankerMarginB[5]")
+        gameResultArr.push(bankerMarginA[5])
+        nowLevelArr.push("bankerMarginA[5]")
     } else if ( nowLevelArr.slice(-1)[0] === "bankerMarginA[8]" ) {
         gameResultArr.push(bankerMarginB[8])
         nowLevelArr.push("bankerMarginB[8]")
     } else if ( nowLevelArr.slice(-1)[0] === "bankerMarginB[8]" ) {
-        gameResultArr.push(bankerMarginB[6])
-        nowLevelArr.push("bankerMarginB[6]")
+        gameResultArr.push(bankerMarginA[6])
+        nowLevelArr.push("bankerMarginA[6]")
     } else if( nowLevelArr.slice(-1)[0] === "playerRest[0]" ){
         gameResultArr.push(playerMarginA[2])
         nowLevelArr.push("playerMarginA[2]")
@@ -597,9 +583,9 @@ BTN_Banker.addEventListener("click", () => {
         nowLevelArr.push("playerMarginB[4]")
     } else if ( nowLevelArr.slice(-1)[0] === "playerMarginB[4]" ) {
         gameResultArr.push(bankerMarginA[2])
-        nowLevelArr.push("playerMarginA[2]")
+        nowLevelArr.push("bankerMarginA[2]")
     } else if ( nowLevelArr.slice(-1)[0] === "playerMarginA[5]" ) {
-        gameResultArr.push(bankerMarginB[5])
+        gameResultArr.push(playerMarginB[5])
         nowLevelArr.push("playerMarginB[5]")
     } else if ( nowLevelArr.slice(-1)[0] === "playerMarginB[5]" ) {
         gameResultArr.push(bankerMarginA[3])
@@ -609,19 +595,19 @@ BTN_Banker.addEventListener("click", () => {
         nowLevelArr.push("playerMarginB[6]")
     } else if ( nowLevelArr.slice(-1)[0] === "playerMarginB[6]" ) {
         gameResultArr.push(playerMarginA[4])
-        nowLevelArr.push("playerMarginB[4]")
+        nowLevelArr.push("playerMarginA[4]")
     } else if ( nowLevelArr.slice(-1)[0] === "playerMarginA[7]" ) {
         gameResultArr.push(playerMarginB[7])
         nowLevelArr.push("playerMarginB[7]")
     } else if ( nowLevelArr.slice(-1)[0] === "playerMarginB[7]" ) {
-        gameResultArr.push(playerMarginB[5])
-        nowLevelArr.push("playerMarginB[5]")
+        gameResultArr.push(playerMarginA[5])
+        nowLevelArr.push("playerMarginA[5]")
     } else if ( nowLevelArr.slice(-1)[0] === "playerMarginA[8]" ) {
         gameResultArr.push(playerMarginB[8])
         nowLevelArr.push("playerMarginB[8]")
     } else if ( nowLevelArr.slice(-1)[0] === "playerMarginB[8]" ) {
-        gameResultArr.push(playerMarginB[6])
-        nowLevelArr.push("playerMarginB[6]")
+        gameResultArr.push(playerMarginA[6])
+        nowLevelArr.push("playerMarginA[6]")
     } else if( nowLevelArr.slice(-1)[0] === "bankerRest[0]" ){
         gameResultArr.push(bankerMarginA[2])
         nowLevelArr.push("bankerMarginA[2]")
@@ -655,12 +641,12 @@ BTN_Banker.addEventListener("click", () => {
 
     betResult()
 
-    if ( playerScoreArr.slice(-1)[0] >= limit ) {
+    // if ( playerScoreArr.slice(-1)[0] >= limit ) {
 
-        alert( "리셋 단계에 도달되었습니다. 게임을 다시 시작합니다." );
-        return gameReset();
+    //     alert( "리셋 단계에 도달되었습니다. 게임을 다시 시작합니다." );
+    //     return gameReset();
 
-    }
+    // }
 
 
 
@@ -701,9 +687,6 @@ const nightMode = () => {
 const setting = () => {
 
     const gameSet = document.querySelector("#gameSet");
-    const cover = document.querySelector("#cover");
-    const setOK = document.querySelector("#setOK");
-    const setCancle = document.querySelector("#setCancle");
     const setMargin = document.querySelector("#martinSet");
     const levelLimit = document.querySelector("#levelLimit");
     const gameType = document.querySelector("#gameType");
@@ -732,7 +715,6 @@ const setting = () => {
 
 
     document.querySelector("#settingBtn").addEventListener("click", () => {
-        gameSet.classList.add("active");
         cover.classList.add("active");
     });
 
@@ -793,7 +775,6 @@ const setting = () => {
             }
             betAmount.innerHTML = optionTxt;
 
-            gameSet.classList.remove("active");
             cover.classList.remove("active");
             setCancle.classList.add("active");
             priceInput.style.borderColor = "#000";
