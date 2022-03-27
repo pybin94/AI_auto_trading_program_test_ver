@@ -1,3 +1,5 @@
+
+
 const playerMarginA = [10000,10000,15000,20000,-30000,-40000,-50000,-65000,-85000];
 const playerMarginB = playerMarginA.map(item => item * 2);
 const bankerMarginA = [-10000,-10000,-15000,-20000,30000,40000,50000,65000,85000];
@@ -46,7 +48,6 @@ let nowStatusArr = []
 
 
 let winRateCheck = 0;
-
 let winCountArr = [0];
 let loseCountArr = [0];
 
@@ -56,7 +57,7 @@ const bugTest = () => {
     // console.log(list)
     // console.log(limit)
     // console.log(gameResultAllArr)
-
+    // console.log(nowLevelArr)
 }
 
 
@@ -164,7 +165,7 @@ const revert = () => {      // 게임 뒤로 가기
     gameResultAllArr.splice(-1,1);
     loseCountArr.splice(-1,1);
     winCountArr.splice(-1,1);
-    
+    nowLevelArr.splice(-1,1);
 
     win.innerHTML = winCountArr.slice(-1)[0];
     lose.innerHTML = loseCountArr.slice(-1)[0];
@@ -172,9 +173,9 @@ const revert = () => {      // 게임 뒤로 가기
 
     priceInput.value = nowPriceValueArr.slice(-1)[0];
 
-    if(isNaN(Math.floor((winCountArr.slice(-1)[0]/(winCountArr.slice(-1)[0]+loseCountArr.slice(-1)[0]))*100)) === true){
-        return gameReset()
-    }
+    // if(isNaN(Math.floor((winCountArr.slice(-1)[0]/(winCountArr.slice(-1)[0]+loseCountArr.slice(-1)[0]))*100)) === true){
+    //     return gameReset()
+    // }
 
     nowPrice.innerHTML = nowPriceValueArr.slice(-1)[0].toLocaleString('ko-KR');
     // betAmount.innerHTML = sumGameResultArr.slice(-1)[0].toLocaleString('ko-KR');
@@ -416,7 +417,7 @@ BTN_Player.addEventListener("click", () => {
         nowLevelArr.push("bankerMarginA[8]")
     } 
 
-    console.log(nowLevelArr)
+
 
     list.push("A");
     viewClick()
@@ -622,8 +623,8 @@ BTN_Banker.addEventListener("click", () => {
         gameResultArr.push(bankerRest[2])
         nowLevelArr.push("bankerRest[2]")
     } else if ( nowLevelArr.slice(-1)[0] === "bankerRest[3]" ){
-        gameResultArr.push(bankerMarginA[2])
-        nowLevelArr.push("bankerMarginA[2]")
+        gameResultArr.push(bankerRest[2])
+        nowLevelArr.push("bankerRest[2]")
     } else if( nowLevelArr.slice(-1)[0] === "playerRest[0]" ){
         gameResultArr.push(playerRest[0])
         nowLevelArr.push("playerRest[0]")
@@ -637,8 +638,6 @@ BTN_Banker.addEventListener("click", () => {
         gameResultArr.push(playerMarginA[8])
         nowLevelArr.push("playerMarginA[8]")
     } 
-
-    console.log(nowLevelArr)
 
     list.push("B");
     viewClick()
@@ -728,6 +727,8 @@ const setting = () => {
 
         gameResultArr.push(playerMarginA[0])
         nowLevelArr.push("playerMarginA[0]")
+        revertBtn.disabled = true;
+        document.querySelector("#revertLabel").style.color = "#b1b1b1"
 
         starting()
         betResult()
@@ -761,7 +762,8 @@ const setting = () => {
 
         gameResultArr.push(bankerMarginA[0])
         nowLevelArr.push("bankerMarginA[0]")
-
+        revertBtn.disabled = true;
+        document.querySelector("#revertLabel").style.color = "#b1b1b1"
 
         starting()
         betResult()
