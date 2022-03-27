@@ -1,11 +1,16 @@
+const playerSetA = [10000, 10000, 15000, 20000, -30000, -40000, -50000, -65000, -85000];
+const playerSetB = [20000, 20000, 30000, 40000, -60000, -80000, -100000, -130000, -170000];
+const bankerSetA = [-10000, -10000, -15000, -20000, 30000, 40000, 50000, 65000, 85000];
+const bankerSetB = [-20000, -20000, -30000, -40000, 60000, 80000, 100000, 130000, 170000];
+const playerRestSet = [-10000, 10000, 10000, 15000];
+const bankerRestSet = [10000, -10000, -10000, -15000];
 
-
-const playerMarginA = [10000,10000,15000,20000,-30000,-40000,-50000,-65000,-85000];
-const playerMarginB = playerMarginA.map(item => item * 2);
-const bankerMarginA = [-10000,-10000,-15000,-20000,30000,40000,50000,65000,85000];
-const bankerMarginB = bankerMarginA.map(item => item * 2);
-const playerRest = [-10000, 10000, 10000, 15000]
-const bankerRest = [10000, -10000, -10000, -15000]
+let playerMarginA = [];
+let playerMarginB = [];
+let bankerMarginA = [];
+let bankerMarginB = [];
+let playerRest = [];
+let bankerRest = [];
 
 // 입력값 설정
 
@@ -26,7 +31,7 @@ const cover = document.querySelector("#cover");
 const setCancle = document.querySelector("#setCancle");
 
 let premium = 0;
-let limit = 10;
+let limit = 9;
 let startAmountValue;
 
 let sumGameResult = 0;
@@ -37,6 +42,7 @@ let profitValue = 0;                        // 합산 손익
 
 let list = [];                      // 버튼
 let margin = [];
+
 
 let nowLevelArr = []
 let gameResultArr = [];             // 게임 결과 값
@@ -57,7 +63,7 @@ const bugTest = () => {
     // console.log(list)
     // console.log(limit)
     // console.log(gameResultAllArr)
-    console.log(nowLevelArr)
+    // console.log(nowLevelArr)
 }
 
 
@@ -308,27 +314,75 @@ BTN_Player.addEventListener("click", () => {
         gameResultArr.push(playerMarginA[1])
         nowLevelArr.push("playerMarginA[1]")
     } else if ( nowLevelArr.slice(-1)[0] === "playerMarginA[4]" ) {
+
+        if ( limit == 6 ){
+            alert( "리셋 단계에 도달되었습니다. 게임을 다시 시작합니다." );
+            return gameReset();
+        }
+
         gameResultArr.push(playerMarginA[5])
         nowLevelArr.push("playerMarginA[5]")
     } else if ( nowLevelArr.slice(-1)[0] === "playerMarginB[4]" ) {
+
+        if ( limit == 6 ){
+            alert( "리셋 단계에 도달되었습니다. 게임을 다시 시작합니다." );
+            return gameReset();
+        }
+
         gameResultArr.push(playerMarginA[5])
         nowLevelArr.push("playerMarginA[5]")
     } else if ( nowLevelArr.slice(-1)[0] === "playerMarginA[5]" ) {
+
+        if ( limit == 7 ){
+            alert( "리셋 단계에 도달되었습니다. 게임을 다시 시작합니다." );
+            return gameReset();
+        }
+
         gameResultArr.push(playerRest[1])
         nowLevelArr.push("playerRest[1]")
     } else if ( nowLevelArr.slice(-1)[0] === "playerMarginB[5]" ) {
+
+        if ( limit == 7 ){
+            alert( "리셋 단계에 도달되었습니다. 게임을 다시 시작합니다." );
+            return gameReset();
+        }
+
         gameResultArr.push(playerRest[1])
         nowLevelArr.push("playerRest[1]")
     } else if ( nowLevelArr.slice(-1)[0] === "playerMarginA[6]" ) {
+
+        if ( limit == 8 ){
+            alert( "리셋 단계에 도달되었습니다. 게임을 다시 시작합니다." );
+            return gameReset();
+        }
+
         gameResultArr.push(playerMarginA[7])
         nowLevelArr.push("playerMarginA[7]")
     } else if ( nowLevelArr.slice(-1)[0] === "playerMarginB[6]" ) {
+
+        if ( limit == 8 ){
+            alert( "리셋 단계에 도달되었습니다. 게임을 다시 시작합니다." );
+            return gameReset();
+        }
+
         gameResultArr.push(playerMarginA[7])
         nowLevelArr.push("playerMarginA[7]")
     } else if ( nowLevelArr.slice(-1)[0] === "playerMarginA[7]" ) {
+
+        if ( limit == 9 ){
+            alert( "리셋 단계에 도달되었습니다. 게임을 다시 시작합니다." );
+            return gameReset();
+        }
+
         gameResultArr.push(playerRest[2])
         nowLevelArr.push("playerRest[2]")
     } else if ( nowLevelArr.slice(-1)[0] === "playerMarginB[7]" ) {
+
+        if ( limit == 9 ){
+            alert( "리셋 단계에 도달되었습니다. 게임을 다시 시작합니다." );
+            return gameReset();
+        }
+
         gameResultArr.push(playerRest[2])
         nowLevelArr.push("playerRest[2]")
     } else if ( nowLevelArr.slice(-1)[0] === "playerMarginA[8]" ) {
@@ -530,27 +584,76 @@ BTN_Banker.addEventListener("click", () => {
         gameResultArr.push(bankerMarginA[1])
         nowLevelArr.push("bankerMarginA[1]")
     } else if ( nowLevelArr.slice(-1)[0] === "bankerMarginA[4]" ) {
+
+        if ( limit == 6 ){
+            alert( "리셋 단계에 도달되었습니다. 게임을 다시 시작합니다." );
+            return gameReset();
+        }
+
         gameResultArr.push(bankerMarginA[5])
         nowLevelArr.push("bankerMarginA[5]")
+
     } else if ( nowLevelArr.slice(-1)[0] === "bankerMarginB[4]" ) {
+
+        if ( limit == 6 ){
+            alert( "리셋 단계에 도달되었습니다. 게임을 다시 시작합니다." );
+            return gameReset();
+        }
+
         gameResultArr.push(bankerMarginA[5])
         nowLevelArr.push("bankerMarginA[5]")
     } else if ( nowLevelArr.slice(-1)[0] === "bankerMarginA[5]" ) {
+
+        if ( limit == 7 ){
+            alert( "리셋 단계에 도달되었습니다. 게임을 다시 시작합니다." );
+            return gameReset();
+        }
+
         gameResultArr.push(bankerRest[1])
         nowLevelArr.push("bankerRest[1]")
     } else if ( nowLevelArr.slice(-1)[0] === "bankerMarginB[5]" ) {
+
+        if ( limit == 7 ){
+            alert( "리셋 단계에 도달되었습니다. 게임을 다시 시작합니다." );
+            return gameReset();
+        }
+
         gameResultArr.push(bankerRest[1])
         nowLevelArr.push("bankerRest[1]")
     } else if ( nowLevelArr.slice(-1)[0] === "bankerMarginA[6]" ) {
+
+        if ( limit == 8 ){
+            alert( "리셋 단계에 도달되었습니다. 게임을 다시 시작합니다." );
+            return gameReset();
+        }
+
         gameResultArr.push(bankerMarginA[7])
         nowLevelArr.push("bankerMarginA[7]")
     } else if ( nowLevelArr.slice(-1)[0] === "bankerMarginB[6]" ) {
+
+        if ( limit == 8 ){
+            alert( "리셋 단계에 도달되었습니다. 게임을 다시 시작합니다." );
+            return gameReset();
+        }
+
         gameResultArr.push(bankerMarginA[7])
         nowLevelArr.push("bankerMarginA[7]")
     } else if ( nowLevelArr.slice(-1)[0] === "bankerMarginA[7]" ) {
+
+        if ( limit == 9 ){
+            alert( "리셋 단계에 도달되었습니다. 게임을 다시 시작합니다." );
+            return gameReset();
+        }
+
         gameResultArr.push(bankerRest[2])
         nowLevelArr.push("bankerRest[2]")
     } else if ( nowLevelArr.slice(-1)[0] === "bankerMarginB[7]" ) {
+
+        if ( limit == 9 ){
+            alert( "리셋 단계에 도달되었습니다. 게임을 다시 시작합니다." );
+            return gameReset();
+        }
+
         gameResultArr.push(bankerRest[2])
         nowLevelArr.push("bankerRest[2]")
     } else if ( nowLevelArr.slice(-1)[0] === "bankerMarginA[8]" ) {
@@ -723,15 +826,13 @@ const setting = () => {
 
     setPlayer.addEventListener("click", () => {
 
+
         let optionTxt = document.querySelector("#martinSet option:checked").text;
 
-        gameResultArr.push(playerMarginA[0])
-        nowLevelArr.push("playerMarginA[0]")
         revertBtn.disabled = true;
         document.querySelector("#revertLabel").style.color = "#b1b1b1"
 
         starting()
-        betResult()
 
         if( priceInput.value == '' || priceInput.value < 10000){
 
@@ -739,11 +840,33 @@ const setting = () => {
 
         } else {
 
-            margin = []
+            playerMarginA = [];
+            playerMarginB = [];
+            bankerMarginA = [];
+            bankerMarginB = [];
+            playerRest = [];
+            bankerRest = [];
 
-            for (let j = 0; j < playerMarginA.length; j++){
-                margin.push(playerMarginA[j] * setMarginValue);
+
+            for (let i = 0; i < playerSetA.length; i++){
+                playerMarginA.push(playerSetA[i] * setMarginValue);
             }
+            for (let i = 0; i < playerSetB.length; i++){
+                playerMarginB.push(playerSetB[i] * setMarginValue);
+            }
+            for (let i = 0; i < bankerSetA.length; i++){
+                bankerMarginA.push(bankerSetA[i] * setMarginValue);
+            }
+            for (let i = 0; i < bankerSetB.length; i++){
+                bankerMarginB.push(bankerSetB[i] * setMarginValue);
+            }
+            for (let i = 0; i < playerRestSet.length; i++){
+                playerRest.push(playerRestSet[i] * setMarginValue);
+            }
+            for (let i = 0; i < bankerRestSet.length; i++){
+                bankerRest.push(bankerRestSet[i] * setMarginValue);
+            }
+
             betAmount.innerHTML = optionTxt;
 
             gameSet.classList.remove("active");
@@ -751,13 +874,16 @@ const setting = () => {
             setCancle.classList.add("active");
             priceInput.style.borderColor = "#000";
 
-            // return gameReset()
+            gameResultArr.push(playerMarginA[0])
+            nowLevelArr.push("playerMarginA[0]")
+            betResult()
+
 
         }
     });
 
     setBanker.addEventListener("click", () => {
-
+        
         let optionTxt = document.querySelector("#martinSet option:checked").text;
 
         gameResultArr.push(bankerMarginA[0])
@@ -774,18 +900,44 @@ const setting = () => {
 
         } else {
 
-            margin = []
 
-            for (let j = 0; j < bankerMarginA.length; j++){
-                margin.push(bankerMarginA[j] * setMarginValue);
+            playerMarginA = [];
+            playerMarginB = [];
+            bankerMarginA = [];
+            bankerMarginB = [];
+            playerRest = [];
+            bankerRest = [];
+
+
+            for (let i = 0; i < playerSetA.length; i++){
+                playerMarginA.push(playerSetA[i] * setMarginValue);
             }
+            for (let i = 0; i < playerSetB.length; i++){
+                playerMarginB.push(playerSetB[i] * setMarginValue);
+            }
+            for (let i = 0; i < bankerSetA.length; i++){
+                bankerMarginA.push(bankerSetA[i] * setMarginValue);
+            }
+            for (let i = 0; i < bankerSetB.length; i++){
+                bankerMarginB.push(bankerSetB[i] * setMarginValue);
+            }
+            for (let i = 0; i < playerRestSet.length; i++){
+                playerRest.push(playerRestSet[i] * setMarginValue);
+            }
+            for (let i = 0; i < bankerRestSet.length; i++){
+                bankerRest.push(bankerRestSet[i] * setMarginValue);
+            }
+
             betAmount.innerHTML = optionTxt;
 
             cover.classList.remove("active");
             setCancle.classList.add("active");
             priceInput.style.borderColor = "#000";
 
-            // return gameReset()
+            gameResultArr.push(bankerMarginA[0])
+            nowLevelArr.push("bankerMarginA[0]")
+            betResult()
+
 
         }
 
