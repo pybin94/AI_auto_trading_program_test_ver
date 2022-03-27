@@ -31,7 +31,7 @@ const cover = document.querySelector("#cover");
 const setCancle = document.querySelector("#setCancle");
 
 let premium = 0;
-let limit = 9;
+let limit = 0;
 let startAmountValue;
 
 let sumGameResult = 0;
