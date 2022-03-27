@@ -57,7 +57,7 @@ const bugTest = () => {
     // console.log(list)
     // console.log(limit)
     // console.log(gameResultAllArr)
-    // console.log(nowLevelArr)
+    console.log(nowLevelArr)
 }
 
 
